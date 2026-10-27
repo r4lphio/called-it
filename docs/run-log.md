@@ -4,7 +4,7 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 
 | Step | Start | PR | Merged | Notes |
 | --- | --- | --- | --- | --- |
-| App build | 16:50:04 | pending | pending | Repository created with a README on `main` at 16:51:37. |
+| App build | 16:50:04 | #1 | pending | Repository created with a README on `main` at 16:51:37. |
 | Failure: pnpm install | 16:51:51 | | | pnpm blocked the esbuild build script. Fix: allow esbuild in `pnpm-workspace.yaml`. |
 | Failure: shadcn imports | 16:52:56 | | | Generated components imported `cn` from a package. Fix: import it from `~/lib/utils`. |
 | Failure: Convex project setup | 16:56:10 | | | `convex dev` cannot ask for a team without a terminal. Fix: pass `--team quant-alchemy`. |
