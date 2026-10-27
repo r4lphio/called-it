@@ -9,14 +9,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/com
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
-import { daysFromToday, fromDateInput, toDateInput } from "~/lib/dates";
+import { daysFromToday, fromDateInput } from "~/lib/dates";
 
 const formSchema = z.object({
   statement: statementSchema,
   due: z
     .string()
     .min(1, "Pick a due date.")
-    .refine((value) => value >= toDateInput(new Date()), "Pick today or a later date."),
+    .refine((value) => value >= daysFromToday(1), "Pick a date after today."),
 });
 
 /** Logs a new call: the statement, a confidence, and a due date. */
@@ -88,7 +88,7 @@ export function CallForm() {
           </div>
           <div className="grid gap-2 sm:max-w-56">
             <Label htmlFor="due">Due date</Label>
-            <Input id="due" type="date" value={due} min={toDateInput(new Date())} onChange={(event) => setDue(event.target.value)} />
+            <Input id="due" type="date" value={due} min={daysFromToday(1)} onChange={(event) => setDue(event.target.value)} />
           </div>
           {error && (
             <p role="alert" className="text-sm text-destructive">

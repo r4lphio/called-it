@@ -49,12 +49,18 @@ export const create = mutation({
   handler: async (ctx, args) => {
     const userId = await requireUserId(ctx);
     const statement = parse(statementSchema, args.statement);
-    if (!Number.isFinite(args.dueAt)) throw new ConvexError("Pick a due date.");
+    // A call due now could be graded by someone who already knows the outcome.
+    if (!Number.isFinite(args.dueAt) || args.dueAt <= Date.now()) throw new ConvexError("Pick a date after today.");
     return await ctx.db.insert("calls", { userId, statement, confidence: args.confidence, dueAt: args.dueAt });
   },
 });
 
-/** Grades a due call once. The note is optional and one line. */
+/**
+ * Grades a due call once. The note is optional and one line.
+ * Due is checked against the server clock. A device clock that runs fast can
+ * show a call as due a few minutes early; the grade is then refused with a
+ * message and works on retry.
+ */
 export const grade = mutation({
   args: { id: v.id("calls"), outcome: outcomeValidator, note: v.optional(v.string()) },
   handler: async (ctx, args) => {

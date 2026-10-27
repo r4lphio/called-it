@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CONFIDENCE_LEVELS, MIN_GRADED_PER_LEVEL, type Confidence, type LevelResult } from "../../convex/model";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { cn } from "~/lib/utils";
 
 const WIDTH = 600;
 const HEIGHT = 340;
@@ -82,7 +83,11 @@ export function CalibrationChart({ levels }: { levels: LevelResult[] }) {
           </svg>
           {activePoint && (
             <div
-              className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-md border bg-popover px-3 py-2 text-xs text-popover-foreground shadow-md"
+              className={cn(
+                "pointer-events-none absolute z-10 w-max -translate-y-full rounded-md border bg-popover px-3 py-2 text-xs whitespace-nowrap text-popover-foreground shadow-md",
+                // Points near the right edge open their tooltip to the left.
+                activePoint.confidence >= 90 ? "-translate-x-full" : "-translate-x-1/2",
+              )}
               style={{
                 left: `${(x(activePoint.confidence) / WIDTH) * 100}%`,
                 top: `calc(${(y(activePoint.hitRate * 100) / HEIGHT) * 100}% - 12px)`,

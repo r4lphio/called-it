@@ -8,13 +8,25 @@ const DAY = 24 * 60 * 60 * 1000;
 
 function setup() {
   const t = convexTest(schema, modules);
-  return { t, ann: t.withIdentity({ subject: "user_ann" }), bob: t.withIdentity({ subject: "user_bob" }) };
+  // `create` refuses past due dates, so due calls are written directly.
+  const insertDue = (userId: string) =>
+    t.run((ctx) => ctx.db.insert("calls", { userId, statement: "Ships Friday", confidence: 80, dueAt: Date.now() - DAY }));
+  return { ann: t.withIdentity({ subject: "user_ann" }), bob: t.withIdentity({ subject: "user_bob" }), insertDue };
 }
+
+describe("create", () => {
+  it("refuses a due date that has passed", async () => {
+    const { ann } = setup();
+    await expect(ann.mutation(api.calls.create, { statement: "Ships Friday", confidence: 80, dueAt: Date.now() - 1 })).rejects.toThrow(
+      "after today",
+    );
+  });
+});
 
 describe("grade", () => {
   it("grades a due call once, with a trimmed note", async () => {
-    const { ann } = setup();
-    const id = await ann.mutation(api.calls.create, { statement: "Ships Friday", confidence: 80, dueAt: Date.now() - DAY });
+    const { ann, insertDue } = setup();
+    const id = await insertDue("user_ann");
     await ann.mutation(api.calls.grade, { id, outcome: "right", note: "  Shipped Thursday.  " });
     const { graded, ungraded } = await ann.query(api.calls.list, {});
     expect(ungraded).toHaveLength(0);
@@ -29,15 +41,15 @@ describe("grade", () => {
   });
 
   it("refuses another person's call", async () => {
-    const { ann, bob } = setup();
-    const id = await ann.mutation(api.calls.create, { statement: "Ships Friday", confidence: 80, dueAt: Date.now() - DAY });
+    const { bob, insertDue } = setup();
+    const id = await insertDue("user_ann");
     await expect(bob.mutation(api.calls.grade, { id, outcome: "right" })).rejects.toThrow("not found");
     expect((await bob.query(api.calls.list, {})).ungraded).toHaveLength(0);
   });
 
   it("refuses a note with a line break", async () => {
-    const { ann } = setup();
-    const id = await ann.mutation(api.calls.create, { statement: "Ships Friday", confidence: 80, dueAt: Date.now() - DAY });
+    const { ann, insertDue } = setup();
+    const id = await insertDue("user_ann");
     await expect(ann.mutation(api.calls.grade, { id, outcome: "right", note: "one\ntwo" })).rejects.toThrow("one line");
   });
 });
