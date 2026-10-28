@@ -11,4 +11,4 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 | Failure: first Convex push | 16:56:24 | | | `CLERK_JWT_ISSUER_DOMAIN` was not set. Fix: set it from the Clerk dev instance. |
 | Failure: Convex typecheck | 17:02:06 | | | Convex functions had no Node types for `process.env`. Fix: add `convex/tsconfig.json`. |
 | Failure: Clerk login callback | 18:13:43 | | | The owner's browser could not reach the CLI on `127.0.0.1`. Fix: the owner pasted the callback URL and the agent sent it to the CLI with curl. |
-| product-readiness plan | 18:14:12 | pending | pending | Plan: https://n1jlf0nqiz6q.postplan.dev |
+| product-readiness plan | 18:14:12 | #2 | pending | Plan: https://n1jlf0nqiz6q.postplan.dev |

@@ -31,3 +31,9 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Options: A run all six skills in order (https://n1jlf0nqiz6q.postplan.dev)
 - Pick: A, by the agent at 18:15:34, as the owner asked
 - Why: The owner asked the agent to make the intake picks (see 18:07:39). The plan was published at 18:15:34 and revised after review, before this PR opened.
+
+## 18:18:36 Merge the plan PR
+- Step: product-readiness
+- Question: Merge PR #2 (https://github.com/r4lphio/called-it/pull/2)?
+- Options: A merge, B ask for changes
+- Pick: pending

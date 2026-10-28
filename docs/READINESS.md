@@ -4,7 +4,7 @@ The running checklist for "make it sellable". The plan is `docs/plans/product-re
 
 | Step | Skill | Status | PR |
 | --- | --- | --- | --- |
-| 0 | product-readiness plan | done | this PR |
+| 0 | product-readiness plan | done | #2 |
 | 1 | domain-provisioning | next | |
 | 2 | brand-creation | to do | |
 | 3 | waitlist-gate | to do | |
