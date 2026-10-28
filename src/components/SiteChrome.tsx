@@ -1,24 +1,31 @@
-import { SignInButton } from "@clerk/tanstack-react-start";
+import { SignInButton, useAuth } from "@clerk/tanstack-react-start";
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Logo } from "~/components/Logo";
 import { Button, buttonVariants } from "~/components/ui/button";
 
-/** The signed-out pages' top bar: the logo and the two doors. */
+/** The public pages' top bar: the logo and the two doors, or a way back to the journal. */
 export function SiteNav() {
+  const { isSignedIn } = useAuth();
   return (
     <nav className="flex items-center justify-between gap-4 py-5">
       <Link to="/" aria-label="Called it home">
         <Logo />
       </Link>
-      <div className="flex items-center gap-2">
-        <SignInButton mode="modal">
-          <Button variant="outline">Sign in</Button>
-        </SignInButton>
-        <Link to="/waitlist" className={buttonVariants({ className: "max-sm:hidden" })}>
-          Request access
+      {isSignedIn ? (
+        <Link to="/" className={buttonVariants()}>
+          Open journal
         </Link>
-      </div>
+      ) : (
+        <div className="flex items-center gap-2">
+          <SignInButton mode="modal">
+            <Button variant="outline">Sign in</Button>
+          </SignInButton>
+          <Link to="/waitlist" className={buttonVariants({ className: "max-sm:hidden" })}>
+            Request access
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

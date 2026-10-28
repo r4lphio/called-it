@@ -13,11 +13,14 @@ function Privacy() {
       <p>This page says what Called it collects, who handles it, and what never leaves.</p>
       <h2>What we collect</h2>
       <ul>
-        <li>Your account: email address and name, for sign-in. Clerk handles sign-in and the waitlist.</li>
+        <li>
+          Your account: email address and name, for sign-in. Clerk handles sign-in and the waitlist, and may run a Cloudflare
+          bot check on those forms.
+        </li>
         <li>Your journal: each call, its confidence, due date, grade, and note. Convex stores it.</li>
         <li>
           Visits: page views counted by Vercel Web Analytics. It uses no cookies and does not identify you across sites. Vercel
-          also hosts the site.
+          also hosts the site, including its fonts, so no font request goes to Google.
         </li>
       </ul>
       <h2>What never leaves</h2>

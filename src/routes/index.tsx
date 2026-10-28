@@ -1,8 +1,6 @@
 import { UserButton, useAuth } from "@clerk/tanstack-react-start";
-import { auth } from "@clerk/tanstack-react-start/server";
 import { createFileRoute } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/react-start";
-import { AuthLoading, Authenticated, useQuery } from "convex/react";
+import { AuthLoading, Authenticated, Unauthenticated, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { calibration } from "../../convex/model";
 import { CalibrationChart } from "~/components/CalibrationChart";
@@ -10,29 +8,19 @@ import { CallForm } from "~/components/CallForm";
 import { CallLists } from "~/components/CallLists";
 import { Landing } from "~/components/Landing";
 import { Logo } from "~/components/Logo";
+import { SiteFooter } from "~/components/SiteChrome";
 import { useNow } from "~/lib/dates";
 
-/** Whether the request carries a Clerk session, so the server renders the right page. */
-const getSignedIn = createServerFn({ method: "GET" }).handler(async () => {
-  const { userId } = await auth();
-  return userId !== null;
-});
-
-export const Route = createFileRoute("/")({
-  beforeLoad: async () => ({ signedInOnServer: await getSignedIn() }),
-  component: Home,
-});
+export const Route = createFileRoute("/")({ component: Home });
 
 /**
- * Strangers get the landing page, rendered on the server for crawlers.
- * Once Clerk loads in the browser, its live state wins, so signing in from
- * the modal swaps to the journal without a reload.
+ * Strangers get the landing page, signed-in people get the journal. Clerk's
+ * middleware hands its auth state to ClerkProvider during server rendering,
+ * so useAuth() is already settled on the server and crawlers get the landing.
  */
 function Home() {
-  const { signedInOnServer } = Route.useRouteContext();
-  const { isLoaded, isSignedIn } = useAuth();
-  const signedIn = isLoaded ? isSignedIn : signedInOnServer;
-  return signedIn ? <AppShell /> : <Landing />;
+  const { isSignedIn } = useAuth();
+  return isSignedIn ? <AppShell /> : <Landing />;
 }
 
 function AppShell() {
@@ -50,6 +38,13 @@ function AppShell() {
       <Authenticated>
         <Journal />
       </Authenticated>
+      {/* Clerk says signed in but Convex refused the token. Say so instead of showing nothing. */}
+      <Unauthenticated>
+        <p role="alert" className="text-sm text-muted-foreground">
+          Your journal could not load. Sign out from the menu above and sign in again.
+        </p>
+      </Unauthenticated>
+      <SiteFooter />
     </div>
   );
 }
