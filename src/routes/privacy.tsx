@@ -20,8 +20,8 @@ function Privacy() {
       <h2>What we collect</h2>
       <ul>
         <li>
-          Your account: email address and name, for sign-in. Clerk handles sign-in and the waitlist, and may run a Cloudflare
-          bot check on those forms.
+          Your account: email address and name, for sign-in. Clerk handles sign-in and the waitlist, and runs bot and fraud
+          checks on those forms.
         </li>
         <li>Your journal: each call, its confidence, due date, grade, and note. Convex stores it.</li>
         <li>
