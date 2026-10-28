@@ -13,6 +13,13 @@ TanStack Start, Convex, Clerk, Tailwind, shadcn/ui on Base UI, Vite, pnpm, TypeS
 3. On the Convex dev deployment, set `CLERK_JWT_ISSUER_DOMAIN` to the Clerk issuer URL. The Clerk instance needs a JWT template named `convex`.
 4. Run `pnpm dev:all`. The app opens on http://localhost:3000.
 
+## Production
+
+- Live at https://called-it.labs.quantalchemy.io. `docs/HOSTNAME.md` lists every setting that carries the hostname.
+- Clerk production instance with waitlist sign-up. Convex prod deployment `exciting-coyote-510`.
+- Deploy with `vercel deploy --prod`, only from an up-to-date `main` with a clean tree. A production build on Vercel runs `convex deploy --cmd 'pnpm build'` (see `vercel.json`), so it pushes the local `convex/` functions to production data. Preview builds and a local `pnpm build` build the UI only.
+- Production never seeds data: `ALLOW_DEV_SEED` is not set there.
+
 ## Sample data
 
 The dev seed adds 20 sample calls for one Clerk user: 17 graded, 1 due, and 2 open. It runs only on a deployment that sets `ALLOW_DEV_SEED=1`. Production never sets it.
