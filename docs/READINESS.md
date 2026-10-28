@@ -5,7 +5,7 @@ The running checklist for "make it sellable". The plan is `docs/plans/product-re
 | Step | Skill | Status | PR |
 | --- | --- | --- | --- |
 | 0 | product-readiness plan | done | #2 |
-| 1 | domain-provisioning | done: https://called-it.labs.quantalchemy.io | this PR |
+| 1 | domain-provisioning | done: https://called-it.labs.quantalchemy.io | #3 |
 | 2 | brand-creation | next | |
 | 3 | waitlist-gate | to do | |
 | 4 | landing-page | to do | |

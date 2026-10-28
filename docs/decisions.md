@@ -37,3 +37,9 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Question: Merge PR #2 (https://github.com/r4lphio/called-it/pull/2)?
 - Options: A merge, B ask for changes
 - Pick: A, at 18:44:12
+
+## 18:47:25 Merge the domain PR
+- Step: domain-provisioning
+- Question: Merge PR #3 (https://github.com/r4lphio/called-it/pull/3)?
+- Options: A merge, B ask for changes
+- Pick: pending
