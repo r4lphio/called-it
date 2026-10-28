@@ -98,3 +98,9 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Pick: A, at 20:48:31
 - By: orchestrating agent, for Ralph
 - Why: "My scope note meant all `called-it` names, and these records serve only this app. They are in the plan Ralph merged in PR #2, and they can be deleted later. Add only these five names and change nothing else in the zone."
+
+## 21:06:31 Merge the production PR
+- Step: production-provisioning
+- Question: Merge PR #8 (https://github.com/r4lphio/called-it/pull/8)?
+- Options: A merge, B ask for changes
+- Pick: pending
