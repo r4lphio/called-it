@@ -51,6 +51,31 @@ export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClien
       { rel: "manifest", href: "/site.webmanifest" },
       { rel: "stylesheet", href: appCss },
     ],
+    // Who makes Called it and what it is, for search and answer engines.
+    // Only facts the pages state: no ratings, prices, or counts.
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            { "@type": "Organization", "@id": "https://r4lph.io/#org", name: "r4lph.io", url: "https://r4lph.io" },
+            {
+              "@type": "SoftwareApplication",
+              "@id": `${SITE_URL}/#app`,
+              name: SITE_NAME,
+              url: SITE_URL,
+              description: SITE_DESCRIPTION,
+              applicationCategory: "ProductivityApplication",
+              operatingSystem: "Web",
+              image: `${SITE_URL}/og.png`,
+              publisher: { "@id": "https://r4lph.io/#org" },
+            },
+            { "@type": "WebSite", "@id": `${SITE_URL}/#site`, name: SITE_NAME, url: SITE_URL, publisher: { "@id": "https://r4lph.io/#org" } },
+          ],
+        }),
+      },
+    ],
   }),
   component: RootComponent,
 });

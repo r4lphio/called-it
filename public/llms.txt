@@ -1,0 +1,30 @@
+# Called it
+
+> Write down the call. Grade it later. A decision journal that shows how often your confidence is right.
+
+Called it is a decision journal for builders. You log a call, such as "this landing page gets 50 sign-ups in a week", with a confidence of 50, 60, 70, 80, 90, or 99 percent and a due date. When the date comes, you grade it right or wrong and can add a one-line note.
+
+A calibration chart shows one point per confidence level: the share of calls you got right against the share you expected. A level appears after 3 graded calls.
+
+Access is by invitation. Called it opens to a few people at a time through a waitlist. It is an r4lph.io product.
+
+## Pages
+
+- [Home](https://called-it.labs.quantalchemy.io/): what Called it does, how it works, and common questions
+- [Request access](https://called-it.labs.quantalchemy.io/waitlist): the waitlist
+- [Terms](https://called-it.labs.quantalchemy.io/terms)
+- [Privacy](https://called-it.labs.quantalchemy.io/privacy)
+
+## Facts
+
+- Confidence levels: 50, 60, 70, 80, 90, and 99 percent.
+- A new call is due in 30 days unless you pick another date.
+- Each call is graded once, right or wrong, with an optional one-line note.
+- A confidence level shows on the chart after 3 graded calls.
+- Calls are private to the account that wrote them.
+- Called it does not sell data, show ads, or send journals to AI models. Clerk, Convex, and Vercel run the service.
+
+## More
+
+- [Full summary for assistants](https://called-it.labs.quantalchemy.io/llms-full.txt)
+- [Claim receipts](https://called-it.labs.quantalchemy.io/claim-receipts.json)

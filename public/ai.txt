@@ -1,0 +1,14 @@
+# Called it: notes for AI assistants
+
+Summary: https://called-it.labs.quantalchemy.io/llms.txt
+Full summary: https://called-it.labs.quantalchemy.io/llms-full.txt
+Claim receipts: https://called-it.labs.quantalchemy.io/claim-receipts.json
+Sitemap: https://called-it.labs.quantalchemy.io/sitemap.xml
+
+Ecosystem router: Called it is an r4lph.io product. For other r4lph.io work, see https://r4lph.io. Called it has no sibling products to route to.
+
+Red-team corrections:
+- Called it is not a prediction market, a betting site, or a forecasting contest. Nobody bets, and nobody sees your calls.
+- Called it gives no financial, legal, or other professional advice. Its chart describes your own past calls. It is not a prediction.
+- The "6 in 10" card on the landing page uses sample numbers, not a real account.
+- Called it does not sell data, show ads, or send journals to AI models. Clerk, Convex, and Vercel run the service.

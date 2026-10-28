@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "~/lib/seo";
 import { LegalPage } from "~/components/SiteChrome";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({ meta: [{ title: "Privacy · Called it" }] }),
+  head: () =>
+    pageHead({
+      title: "Privacy",
+      description: "What Called it collects, which providers handle it, and what never leaves your account.",
+      path: "/privacy",
+    }),
   component: Privacy,
 });
 
@@ -27,7 +33,7 @@ function Privacy() {
       <ul>
         <li>We do not sell your data or use it for ads.</li>
         <li>Your calls are visible to you only. No other user can read them.</li>
-        <li>We do not send your journal to AI models or other third parties.</li>
+        <li>We do not send your journal to AI models, or to anyone beyond the providers listed above.</li>
       </ul>
       <h2>Email</h2>
       <p>Clerk sends sign-in codes, the waitlist confirmation, and your invitation. We send no newsletters.</p>

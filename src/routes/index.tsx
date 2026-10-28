@@ -10,8 +10,30 @@ import { Landing } from "~/components/Landing";
 import { Logo } from "~/components/Logo";
 import { SiteFooter } from "~/components/SiteChrome";
 import { useNow } from "~/lib/dates";
+import { FAQ } from "~/lib/faq";
+import { pageHead } from "~/lib/seo";
+import { SITE_NAME } from "~/lib/site";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({
+    ...pageHead({ title: SITE_NAME, path: "/" }),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: { "@type": "Answer", text: answer },
+          })),
+        }),
+      },
+    ],
+  }),
+  component: Home,
+});
 
 /**
  * Strangers get the landing page, signed-in people get the journal. Clerk's

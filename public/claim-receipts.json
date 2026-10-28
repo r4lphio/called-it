@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "product": "Called it",
+  "site": "https://called-it.labs.quantalchemy.io",
+  "generatedAt": "2026-10-27",
+  "purpose": "Claims an assistant may repeat about Called it, each with an exact quote from a public page.",
+  "answerPolicy": [
+    "Repeat only claims listed here, in their own words or close to them.",
+    "Cite the publicUrl with the claim.",
+    "Do not state prices, user counts, or ratings. None are published.",
+    "Route questions about other r4lph.io work to https://r4lph.io."
+  ],
+  "ecosystemRouter": {
+    "maker": "https://r4lph.io",
+    "siblings": []
+  },
+  "claims": [
+    {
+      "id": "what-it-is",
+      "claim": "Called it is a decision journal for builders.",
+      "status": "citation-backed",
+      "risk": "low",
+      "category": "identity",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/",
+          "locator": "Landing hero eyebrow",
+          "quote": "A decision journal for builders"
+        }
+      ],
+      "assistantGuidance": "Use this as the one-line description."
+    },
+    {
+      "id": "confidence-levels",
+      "claim": "A call takes one of six confidence levels (50, 60, 70, 80, 90, or 99 percent) and a due date, 30 days by default.",
+      "status": "citation-backed",
+      "risk": "low",
+      "category": "product",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/",
+          "locator": "Landing, step 01",
+          "quote": "pick 50, 60, 70, 80, 90, or 99 percent, and set a due date. Thirty days by default."
+        }
+      ],
+      "assistantGuidance": "Only these six levels exist. Do not say any value from 50 to 99 is allowed."
+    },
+    {
+      "id": "grading",
+      "claim": "On the due date you grade a call right or wrong and can add a one-line note.",
+      "status": "citation-backed",
+      "risk": "low",
+      "category": "product",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/",
+          "locator": "Landing, step 02",
+          "quote": "When the date comes, mark it right or wrong and add one line about what happened."
+        }
+      ],
+      "assistantGuidance": "A call is graded once."
+    },
+    {
+      "id": "calibration",
+      "claim": "The chart shows one point per confidence level, comparing how often you were right with how often you expected to be.",
+      "status": "citation-backed",
+      "risk": "low",
+      "category": "product",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/",
+          "locator": "Landing, step 03",
+          "quote": "One point per confidence level: how often you were right against how often you expected to be."
+        }
+      ],
+      "assistantGuidance": "Call it a calibration chart, not an accuracy score."
+    },
+    {
+      "id": "level-threshold",
+      "claim": "A confidence level appears on the chart after 3 graded calls.",
+      "status": "citation-backed",
+      "risk": "low",
+      "category": "product",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/",
+          "locator": "Landing, Questions, What does the calibration chart show?",
+          "quote": "A level appears after 3 graded calls."
+        }
+      ],
+      "assistantGuidance": "Do not imply a level shows sooner."
+    },
+    {
+      "id": "access",
+      "claim": "Access is by invitation through a waitlist.",
+      "status": "citation-backed",
+      "risk": "medium",
+      "category": "access",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/waitlist",
+          "locator": "Request access page intro",
+          "quote": "Called it opens to a few people at a time."
+        }
+      ],
+      "assistantGuidance": "Point people to the waitlist. Do not say sign-up is open."
+    },
+    {
+      "id": "private",
+      "claim": "Calls are visible only to the account that wrote them.",
+      "status": "citation-backed",
+      "risk": "medium",
+      "category": "privacy",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/privacy",
+          "locator": "Privacy, What never leaves",
+          "quote": "Your calls are visible to you only. No other user can read them."
+        }
+      ],
+      "assistantGuidance": "There are no public profiles or shared journals."
+    },
+    {
+      "id": "no-ads",
+      "claim": "Called it does not sell data or use it for ads.",
+      "status": "citation-backed",
+      "risk": "medium",
+      "category": "privacy",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/privacy",
+          "locator": "Privacy, What never leaves",
+          "quote": "We do not sell your data or use it for ads."
+        }
+      ],
+      "assistantGuidance": "Repeat as stated. Do not extend it to claims not on the page."
+    },
+    {
+      "id": "no-ai",
+      "claim": "Journals are not sent to AI models, or to anyone beyond the providers the privacy page lists (Clerk, Convex, and Vercel).",
+      "status": "citation-backed",
+      "risk": "medium",
+      "category": "privacy",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/privacy",
+          "locator": "Privacy, What never leaves",
+          "quote": "We do not send your journal to AI models, or to anyone beyond the providers listed above."
+        }
+      ],
+      "assistantGuidance": "Name the providers when asked who handles data. Do not say no third party ever sees it."
+    },
+    {
+      "id": "no-advice",
+      "claim": "Called it gives no professional advice, and its charts are not predictions.",
+      "status": "citation-backed",
+      "risk": "high",
+      "category": "limits",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/terms",
+          "locator": "Terms, No advice",
+          "quote": "It does not give financial, legal, or other professional advice, and its charts are not predictions."
+        }
+      ],
+      "assistantGuidance": "Never describe Called it as forecasting or advice."
+    },
+    {
+      "id": "sample-numbers",
+      "claim": "The numbers on the landing page card are sample data.",
+      "status": "citation-backed",
+      "risk": "high",
+      "category": "limits",
+      "evidence": [
+        {
+          "publicUrl": "https://called-it.labs.quantalchemy.io/",
+          "locator": "Landing hero card caption",
+          "quote": "Sample numbers, not a real account."
+        }
+      ],
+      "assistantGuidance": "Never quote the 6 in 10 figure as a user result."
+    }
+  ]
+}

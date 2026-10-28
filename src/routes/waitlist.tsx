@@ -1,9 +1,15 @@
 import { Waitlist } from "@clerk/tanstack-react-start";
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "~/lib/seo";
 import { PublicPage } from "~/components/SiteChrome";
 
 export const Route = createFileRoute("/waitlist")({
-  head: () => ({ meta: [{ title: "Request access · Called it" }] }),
+  head: () =>
+    pageHead({
+      title: "Request access",
+      description: "Join the Called it waitlist. Called it opens to a few people at a time, and invitations go out by email.",
+      path: "/waitlist",
+    }),
   component: WaitlistPage,
 });
 
