@@ -23,7 +23,7 @@ const SAMPLE_LEVELS: LevelResult[] = [
 const HERO_BUTTON = "h-11 px-5 text-base";
 
 const STEPS = [
-  { title: "Log the call", body: "Write what you expect, pick 50 to 99 percent, and set a due date. Thirty days by default." },
+  { title: "Log the call", body: "Write what you expect, pick 50, 60, 70, 80, 90, or 99 percent, and set a due date. Thirty days by default." },
   { title: "Grade it on the day", body: "When the date comes, mark it right or wrong and add one line about what happened." },
   {
     title: "See your calibration",

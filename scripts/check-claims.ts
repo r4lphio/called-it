@@ -1,13 +1,20 @@
-// Checks that every quote in public/claim-receipts.json appears word for word
-// on its page. Run with `pnpm check:claims [origin]`; the origin defaults to the
-// live site, and http://localhost:3000 checks the dev server instead.
+// Checks that every quote in claim-receipts.json appears word for word on its
+// page. Run with `pnpm check:claims [origin]`; the origin defaults to the live
+// site, and http://localhost:3000 checks the dev server instead. The receipts
+// are read from the origin itself, so a live run checks the deployed copy.
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 type Receipts = { site: string; claims: Array<{ id: string; evidence: Array<{ publicUrl: string; quote: string }> }> };
 
-const receipts: Receipts = JSON.parse(readFileSync(resolve(import.meta.dirname, "../public/claim-receipts.json"), "utf8"));
-const origin = process.argv[2] ?? receipts.site;
+const local: Receipts = JSON.parse(readFileSync(resolve(import.meta.dirname, "../public/claim-receipts.json"), "utf8"));
+const origin = process.argv[2] ?? local.site;
+
+/** A page's body, or null when it redirects or does not return 200. */
+async function get(url: string): Promise<string | null> {
+  const response = await fetch(url, { redirect: "manual" });
+  return response.status === 200 ? response.text() : null;
+}
 
 /** Page text with tags removed, entities decoded, and whitespace collapsed. */
 function pageText(html: string): string {
@@ -20,16 +27,29 @@ function pageText(html: string): string {
     .replace(/\s+/g, " ");
 }
 
-const pages = new Map<string, string>();
-let failed = 0;
+const served = await get(`${origin}/claim-receipts.json`);
+if (!served) {
+  console.log(`FAIL ${origin}/claim-receipts.json is not served`);
+  process.exit(1);
+}
+const receipts: Receipts = JSON.parse(served);
+
+const pages = new Map<string, string | null>();
+let failedClaims = 0;
 for (const claim of receipts.claims) {
+  let claimOk = true;
   for (const { publicUrl, quote } of claim.evidence) {
     const url = publicUrl.replace(receipts.site, origin);
-    if (!pages.has(url)) pages.set(url, pageText(await (await fetch(url)).text()));
-    const found = pages.get(url)!.includes(quote);
-    if (!found) failed++;
-    console.log(`${found ? "PASS" : "FAIL"} ${claim.id}: ${url}`);
+    if (!pages.has(url)) {
+      const html = await get(url);
+      pages.set(url, html === null ? null : pageText(html));
+    }
+    const text = pages.get(url);
+    const found = text != null && text.includes(quote);
+    if (!found) claimOk = false;
+    console.log(`${found ? "PASS" : "FAIL"} ${claim.id}: ${url}${text == null ? " (not 200)" : ""}`);
   }
+  if (!claimOk) failedClaims++;
 }
-console.log(`${receipts.claims.length - failed}/${receipts.claims.length} quotes found`);
-process.exit(failed ? 1 : 0);
+console.log(`${receipts.claims.length - failedClaims}/${receipts.claims.length} claims have every quote on their page`);
+process.exit(failedClaims ? 1 : 0);

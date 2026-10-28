@@ -70,8 +70,6 @@ export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClien
               operatingSystem: "Web",
               image: `${SITE_URL}/og.png`,
               publisher: { "@id": "https://r4lph.io/#org" },
-              // Waitlist only for now, so the offer is a pre-order with no price.
-              offers: { "@type": "Offer", availability: "https://schema.org/PreOrder", url: `${SITE_URL}/waitlist` },
             },
             { "@type": "WebSite", "@id": `${SITE_URL}/#site`, name: SITE_NAME, url: SITE_URL, publisher: { "@id": "https://r4lph.io/#org" } },
           ],

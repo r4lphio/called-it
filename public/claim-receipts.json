@@ -32,7 +32,7 @@
     },
     {
       "id": "confidence-levels",
-      "claim": "A call takes a confidence from 50 to 99 percent and a due date, 30 days by default.",
+      "claim": "A call takes one of six confidence levels (50, 60, 70, 80, 90, or 99 percent) and a due date, 30 days by default.",
       "status": "citation-backed",
       "risk": "low",
       "category": "product",
@@ -40,10 +40,10 @@
         {
           "publicUrl": "https://called-it.labs.quantalchemy.io/",
           "locator": "Landing, step 01",
-          "quote": "pick 50 to 99 percent, and set a due date. Thirty days by default."
+          "quote": "pick 50, 60, 70, 80, 90, or 99 percent, and set a due date. Thirty days by default."
         }
       ],
-      "assistantGuidance": "The levels are 50, 60, 70, 80, 90, and 99 percent."
+      "assistantGuidance": "Only these six levels exist. Do not say any value from 50 to 99 is allowed."
     },
     {
       "id": "grading",
@@ -137,7 +137,7 @@
     },
     {
       "id": "no-ai",
-      "claim": "Journals are not sent to AI models or other third parties.",
+      "claim": "Journals are not sent to AI models, or to anyone beyond the providers the privacy page lists (Clerk, Convex, and Vercel).",
       "status": "citation-backed",
       "risk": "medium",
       "category": "privacy",
@@ -145,10 +145,10 @@
         {
           "publicUrl": "https://called-it.labs.quantalchemy.io/privacy",
           "locator": "Privacy, What never leaves",
-          "quote": "We do not send your journal to AI models or other third parties."
+          "quote": "We do not send your journal to AI models, or to anyone beyond the providers listed above."
         }
       ],
-      "assistantGuidance": "Clerk, Convex, and Vercel still run the service, as the privacy page lists."
+      "assistantGuidance": "Name the providers when asked who handles data. Do not say no third party ever sees it."
     },
     {
       "id": "no-advice",

@@ -22,7 +22,7 @@ Access is by invitation. Called it opens to a few people at a time through a wai
 - Each call is graded once, right or wrong, with an optional one-line note.
 - A confidence level shows on the chart after 3 graded calls.
 - Calls are private to the account that wrote them.
-- Called it does not sell data, show ads, or send journals to AI models.
+- Called it does not sell data, show ads, or send journals to AI models. Clerk, Convex, and Vercel run the service.
 
 ## More
 

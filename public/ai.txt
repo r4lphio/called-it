@@ -11,4 +11,4 @@ Red-team corrections:
 - Called it is not a prediction market, a betting site, or a forecasting contest. Nobody bets, and nobody sees your calls.
 - Called it gives no financial, legal, or other professional advice. Its chart describes your own past calls. It is not a prediction.
 - The "6 in 10" card on the landing page uses sample numbers, not a real account.
-- Called it does not sell data, show ads, or send journals to AI models.
+- Called it does not sell data, show ads, or send journals to AI models. Clerk, Convex, and Vercel run the service.

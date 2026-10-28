@@ -33,7 +33,7 @@ function Privacy() {
       <ul>
         <li>We do not sell your data or use it for ads.</li>
         <li>Your calls are visible to you only. No other user can read them.</li>
-        <li>We do not send your journal to AI models or other third parties.</li>
+        <li>We do not send your journal to AI models, or to anyone beyond the providers listed above.</li>
       </ul>
       <h2>Email</h2>
       <p>Clerk sends sign-in codes, the waitlist confirmation, and your invitation. We send no newsletters.</p>
