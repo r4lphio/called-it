@@ -1,5 +1,5 @@
 import { SignInButton, UserButton } from "@clerk/tanstack-react-start";
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { AuthLoading, Authenticated, Unauthenticated, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { calibration } from "../../convex/model";
@@ -7,7 +7,7 @@ import { CalibrationChart } from "~/components/CalibrationChart";
 import { CallForm } from "~/components/CallForm";
 import { CallLists } from "~/components/CallLists";
 import { Logo } from "~/components/Logo";
-import { Button } from "~/components/ui/button";
+import { Button, buttonVariants } from "~/components/ui/button";
 import { useNow } from "~/lib/dates";
 
 export const Route = createFileRoute("/")({ component: Home });
@@ -43,9 +43,14 @@ function SignedOut() {
       <p className="mx-auto max-w-prose text-muted-foreground">
         Log a call with a confidence and a due date. Grade it when the date comes. See how well your confidence matches your results.
       </p>
-      <div>
+      <div className="flex flex-wrap justify-center gap-3">
+        <Link to="/waitlist" className={buttonVariants({ size: "lg" })}>
+          Request access
+        </Link>
         <SignInButton mode="modal">
-          <Button size="lg">Sign in</Button>
+          <Button size="lg" variant="outline">
+            Sign in
+          </Button>
         </SignInButton>
       </div>
     </section>

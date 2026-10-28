@@ -7,8 +7,8 @@ The running checklist for "make it sellable". The plan is `docs/plans/product-re
 | 0 | product-readiness plan | done | #2 |
 | 1 | domain-provisioning | done: https://called-it.labs.quantalchemy.io | #3 |
 | 2 | brand-creation | done: "Ledger", see `brand/BRAND.md` | #4 |
-| 3 | waitlist-gate | next | |
-| 4 | landing-page | to do | |
+| 3 | waitlist-gate | done: dev instance in waitlist mode, `/waitlist` live | #5 |
+| 4 | landing-page | next | |
 | 5 | seo-aeo-geo | to do | |
 | 6 | production-provisioning | to do | |
 

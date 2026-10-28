@@ -63,7 +63,7 @@ export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClien
 function RootComponent() {
   const { convexClient } = useRouteContext({ from: Route.id });
   return (
-    <ClerkProvider appearance={clerkAppearance}>
+    <ClerkProvider appearance={clerkAppearance} waitlistUrl="/waitlist">
       <ConvexProviderWithClerk client={convexClient} useAuth={useAuth}>
         <RootDocument>
           <Outlet />

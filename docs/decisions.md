@@ -58,4 +58,11 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Step: brand-creation
 - Question: Merge PR #4 (https://github.com/r4lphio/called-it/pull/4)?
 - Options: A merge, B ask for changes
+- Pick: A, at 19:15:29
+- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+
+## 19:17:49 Merge the waitlist PR
+- Step: waitlist-gate
+- Question: Merge PR #5 (https://github.com/r4lphio/called-it/pull/5)?
+- Options: A merge, B ask for changes
 - Pick: pending
