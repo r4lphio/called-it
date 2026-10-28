@@ -11,7 +11,7 @@ Called it went from an empty folder to a public product at https://called-it.lab
 | 1 | domain-provisioning | https://called-it.labs.quantalchemy.io, TLS by Let's Encrypt | #3 |
 | 2 | brand-creation | "Ledger": mark, palette, type, favicons, OG card. See `brand/BRAND.md` | #4 |
 | 3 | waitlist-gate | Waitlist sign-up on dev, then production. `/waitlist` page | #5 |
-| 4 | landing-page | "The number" landing, terms and privacy drafts, analytics script | #6 |
+| 4 | landing-page | "The number" landing, terms, and privacy | #6 |
 | 5 | seo-aeo-geo | Per-route heads, JSON-LD, FAQ, robots, sitemap, llms, ai.txt, 11 claim receipts | #7 |
 | 6 | production-provisioning | Clerk production instance, Convex prod, Vercel Production, signed-in round trip proven | #8 |
 
@@ -30,12 +30,12 @@ Called it went from an empty folder to a public product at https://called-it.lab
 
 ## Still manual
 
-- **Vercel Web Analytics:** turn it on for the `called-it` project in the dashboard. Vercel has no API for it. The script is in the page and is harmless until then.
 - **Owner's production account:** production is in waitlist mode, so Ralph joins through `/waitlist`, or through an invitation from the Clerk dashboard. The dev test user does not exist in production.
 - **Git auto-deploy:** give Vercel's GitHub app access to `r4lphio/called-it`. Until then, deploys run with `vercel deploy --prod`.
 
 ## Skipped, and why
 
+- **Vercel Web Analytics:** the owner chose not to use it, so the script is removed and the privacy page says the site runs no analytics.
 - **Legal review:** the owner accepted the terms and privacy pages as written, on 2026-10-27.
 - **Google sign-in:** the owner chose not to offer it.
 - **A link from r4lph.io:** the owner chose not to add one.

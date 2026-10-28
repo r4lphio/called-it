@@ -1,6 +1,5 @@
 /// <reference types="vite/client" />
 import { ClerkProvider, useAuth } from "@clerk/tanstack-react-start";
-import { Analytics } from "@vercel/analytics/react";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext, useRouteContext } from "@tanstack/react-router";
 import type { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
@@ -104,7 +103,6 @@ function RootDocument({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <Analytics />
         <Scripts />
       </body>
     </html>

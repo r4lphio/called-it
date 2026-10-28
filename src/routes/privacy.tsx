@@ -12,7 +12,7 @@ export const Route = createFileRoute("/privacy")({
   component: Privacy,
 });
 
-// Draft in plain language from what the product does. Owner's legal review pending.
+// Plain language, from what the product does. The owner accepted it as written on 2026-10-27.
 function Privacy() {
   return (
     <LegalPage title="Privacy" updated="October 27, 2026">
@@ -25,8 +25,8 @@ function Privacy() {
         </li>
         <li>Your journal: each call, its confidence, due date, grade, and note. Convex stores it.</li>
         <li>
-          Visits: page views counted by Vercel Web Analytics. It uses no cookies and does not identify you across sites. Vercel
-          also hosts the site, including its fonts, so no font request goes to Google.
+          Hosting: Vercel hosts the site, including its fonts, so no font request goes to Google. We run no analytics and set no
+          tracking cookies.
         </li>
       </ul>
       <h2>What never leaves</h2>
