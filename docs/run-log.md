@@ -21,4 +21,4 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 | waitlist-gate | 19:15:54 | #5 | 19:24:54 | Clerk dev instance set to `waitlist` at 19:16:00. `/waitlist` live. |
 | landing-page | 19:25:09 | #6 | 20:08:00 | Picked B "The number". Landing, terms, and privacy live at 19:30:08. |
 | Failure: Vercel Web Analytics | about 19:29 | | | No API turns on Web Analytics. Fix: none in this run. The script ships, and turning it on is a follow-up. |
-| seo-aeo-geo | 20:08:24 | pending | pending | Live audit 13/26 before, 28/28 after at 20:10:53. 11/11 claim quotes found live. |
+| seo-aeo-geo | 20:08:24 | pending | pending | Live audit 13/26 before, 28/28 after (rechecked 20:15:51 after review fixes). 11/11 claims verified on the live pages. |
