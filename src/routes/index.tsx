@@ -1,59 +1,51 @@
-import { SignInButton, UserButton } from "@clerk/tanstack-react-start";
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { UserButton, useAuth } from "@clerk/tanstack-react-start";
+import { createFileRoute } from "@tanstack/react-router";
 import { AuthLoading, Authenticated, Unauthenticated, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { calibration } from "../../convex/model";
 import { CalibrationChart } from "~/components/CalibrationChart";
 import { CallForm } from "~/components/CallForm";
 import { CallLists } from "~/components/CallLists";
+import { Landing } from "~/components/Landing";
 import { Logo } from "~/components/Logo";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { SiteFooter } from "~/components/SiteChrome";
 import { useNow } from "~/lib/dates";
 
 export const Route = createFileRoute("/")({ component: Home });
 
+/**
+ * Strangers get the landing page, signed-in people get the journal. Clerk's
+ * middleware hands its auth state to ClerkProvider during server rendering,
+ * so useAuth() is already settled on the server and crawlers get the landing.
+ */
 function Home() {
+  const { isSignedIn } = useAuth();
+  return isSignedIn ? <AppShell /> : <Landing />;
+}
+
+function AppShell() {
   return (
     <div className="mx-auto grid max-w-3xl gap-6 px-4 py-6 sm:py-10">
       <header className="flex items-center justify-between">
         <h1>
           <Logo />
         </h1>
-        <Authenticated>
-          <UserButton />
-        </Authenticated>
+        <UserButton />
       </header>
       <AuthLoading>
-        <p className="text-sm text-muted-foreground">Loading...</p>
+        <p className="text-sm text-muted-foreground">Loading your calls...</p>
       </AuthLoading>
-      <Unauthenticated>
-        <SignedOut />
-      </Unauthenticated>
       <Authenticated>
         <Journal />
       </Authenticated>
+      {/* Clerk says signed in but Convex refused the token. Say so instead of showing nothing. */}
+      <Unauthenticated>
+        <p role="alert" className="text-sm text-muted-foreground">
+          Your journal could not load. Sign out from the menu above and sign in again.
+        </p>
+      </Unauthenticated>
+      <SiteFooter />
     </div>
-  );
-}
-
-function SignedOut() {
-  return (
-    <section className="grid gap-4 py-16 text-center">
-      <h2 className="font-display text-4xl font-semibold tracking-tight">Write down the call. Grade it later.</h2>
-      <p className="mx-auto max-w-prose text-muted-foreground">
-        Log a call with a confidence and a due date. Grade it when the date comes. See how well your confidence matches your results.
-      </p>
-      <div className="flex flex-wrap justify-center gap-3">
-        <Link to="/waitlist" className={buttonVariants({ size: "lg" })}>
-          Request access
-        </Link>
-        <SignInButton mode="modal">
-          <Button size="lg" variant="outline">
-            Sign in
-          </Button>
-        </SignInButton>
-      </div>
-    </section>
   );
 }
 

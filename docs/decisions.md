@@ -65,4 +65,20 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Step: waitlist-gate
 - Question: Merge PR #5 (https://github.com/r4lphio/called-it/pull/5)?
 - Options: A merge, B ask for changes
+- Pick: A, at 19:24:54
+- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+
+## 19:26:42 Landing direction
+- Step: landing-page
+- Question: Which landing direction?
+- Options: A "Product first" (https://xalf41ckwyn2.postplan.dev), B "The number" (https://2o33baj9qx74.postplan.dev), C "The story" (https://u5445csfdz5p.postplan.dev)
+- Pick: B, at 19:26:42
+- By: the agent, as Ralph agreed
+- Why: "At 90 percent sure, you were right 6 in 10" explains calibration before any reading, and calibration is the product. A shows the app but not why it matters. C makes the point only after two paragraphs.
+- Change from the mock: eyebrows and step numbers use muted ink. The brand keeps red for the pencil and for misses, so the red "30 points below" gap stays.
+
+## 19:36:39 Merge the landing PR
+- Step: landing-page
+- Question: Merge PR #6 (https://github.com/r4lphio/called-it/pull/6)?
+- Options: A merge, B ask for changes
 - Pick: pending

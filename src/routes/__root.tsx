@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import { ClerkProvider, useAuth } from "@clerk/tanstack-react-start";
+import { Analytics } from "@vercel/analytics/react";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext, useRouteContext } from "@tanstack/react-router";
 import type { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
@@ -19,7 +20,7 @@ const clerkAppearance = {
     colorDanger: "#c8402b",
     colorSuccess: "#2f7a55",
     borderRadius: "0.75rem",
-    fontFamily: '"Inter", system-ui, sans-serif',
+    fontFamily: '"Inter Variable", system-ui, sans-serif',
   },
 } satisfies ComponentProps<typeof ClerkProvider>["appearance"];
 
@@ -48,12 +49,6 @@ export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClien
       { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,600&display=swap",
-      },
       { rel: "stylesheet", href: appCss },
     ],
   }),
@@ -84,6 +79,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <Scripts />
       </body>
     </html>

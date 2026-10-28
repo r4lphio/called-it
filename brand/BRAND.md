@@ -28,7 +28,7 @@ Red never marks an action. Primary buttons are ink.
 
 - Display: Newsreader 600, tracking -0.02em. Use it for the wordmark, headings, and card titles.
 - Body and numbers: Inter 400, 500, and 600, with tabular figures for numbers.
-- `brand/fonts/` holds static TTFs for asset rendering, with their OFL licenses. The app loads both fonts from Google Fonts.
+- `brand/fonts/` holds static TTFs for asset rendering, with their OFL licenses. The app serves both fonts itself through the Fontsource packages, so no request goes to Google.
 
 ## Voice
 
