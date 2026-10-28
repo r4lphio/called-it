@@ -9,8 +9,10 @@ Current: https://called-it.labs.quantalchemy.io (attached 2026-10-27, CNAME in t
 | TLS | Vercel | Let's Encrypt certificate, issued on attach | Vercel |
 | Clerk allowed origin | Clerk dev instance | none needed, dev accepts any origin | none |
 | Clerk allowed origin | Clerk production instance (step 6) | https://called-it.labs.quantalchemy.io | skill (Platform API) |
+| Site URL | `brand/brand.json` `url`, read by `src/lib/site.ts` | `called-it.labs.quantalchemy.io` | skill (edit, then `pnpm brand:assets`) |
+| OG card text | `public/og.png`, generated from `brand/brand.json` | shows the hostname | skill (`pnpm brand:assets`) |
 
-The app reads no hostname from env today. Later steps add hostname-dependent files: the site URL constant, `robots.txt`, `sitemap.xml`, `llms.txt`, and the Clerk production domain records. List each here when it lands.
+Later steps add more hostname-dependent files: `robots.txt`, `sitemap.xml`, `llms.txt`, and the Clerk production domain records. List each here when it lands.
 
 Deploys run with `vercel deploy --prod` from this repository. Vercel's GitHub app has no access to this private repository, so pushes do not deploy.
 

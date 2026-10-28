@@ -1,0 +1,21 @@
+{
+  "name": "Called it",
+  "tagline": "Write down the call. Grade it later.",
+  "description": "Called it is a decision journal for builders. Log a call with a confidence and a due date, grade it when the date comes, and see how often you are right at each confidence level.",
+  "ogSubtitle": "A decision journal that shows how often your confidence is right.",
+  "url": "called-it.labs.quantalchemy.io",
+  "themeColor": "#F6F1E7",
+  "background": "#F6F1E7",
+  "panel": "#FFFDF8",
+  "ink": "#1D1B16",
+  "ink2": "#5B564C",
+  "ink3": "#8A8477",
+  "accent": "#C8402B",
+  "displayFont": "Newsreader",
+  "bodyFont": "Inter",
+  "fonts": {
+    "display": "brand/fonts/Newsreader-600.ttf",
+    "body": "brand/fonts/Inter-400.ttf",
+    "bodySemibold": "brand/fonts/Inter-600.ttf"
+  }
+}

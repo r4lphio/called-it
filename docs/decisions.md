@@ -42,4 +42,14 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Step: domain-provisioning
 - Question: Merge PR #3 (https://github.com/r4lphio/called-it/pull/3)?
 - Options: A merge, B ask for changes
-- Pick: pending
+- Pick: A, at 18:52:26
+- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+
+## 18:54:53 Brand direction
+- Step: brand-creation
+- Question: Which brand direction?
+- Options: A "Ledger" (https://hlamhisk5r7e.postplan.dev), B "Diagonal" (https://eie1krrcawan.postplan.dev), C "Stamp" (https://9azyh082jney.postplan.dev)
+- Pick: A, at 18:54:53
+- By: the agent, as Ralph agreed
+- Why: The check in a red grading circle still reads at 16 px. It names the core action, grading a call. The paper-and-ink tone fits a journal kept for years. B's dot disappears at 16 px, and the mark reads as a slider. C's speech bubble looks like a chat app.
+- Change from the mock: red stays the grading pencil and the "Wrong" color only. Buttons and the selected confidence use ink, because the red button read as a warning.

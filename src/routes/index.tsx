@@ -6,6 +6,7 @@ import { calibration } from "../../convex/model";
 import { CalibrationChart } from "~/components/CalibrationChart";
 import { CallForm } from "~/components/CallForm";
 import { CallLists } from "~/components/CallLists";
+import { Logo } from "~/components/Logo";
 import { Button } from "~/components/ui/button";
 import { useNow } from "~/lib/dates";
 
@@ -15,7 +16,9 @@ function Home() {
   return (
     <div className="mx-auto grid max-w-3xl gap-6 px-4 py-6 sm:py-10">
       <header className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold tracking-tight">Called it</h1>
+        <h1>
+          <Logo />
+        </h1>
         <Authenticated>
           <UserButton />
         </Authenticated>
@@ -36,7 +39,7 @@ function Home() {
 function SignedOut() {
   return (
     <section className="grid gap-4 py-16 text-center">
-      <h2 className="text-3xl font-semibold tracking-tight">Find out how often you are right.</h2>
+      <h2 className="font-display text-4xl font-semibold tracking-tight">Write down the call. Grade it later.</h2>
       <p className="mx-auto max-w-prose text-muted-foreground">
         Log a call with a confidence and a due date. Grade it when the date comes. See how well your confidence matches your results.
       </p>
