@@ -19,7 +19,7 @@ Called it went from an empty folder to a public product at https://called-it.lab
 
 - **Hostname:** https://called-it.labs.quantalchemy.io. It serves the production build with valid TLS.
 - **Brand:** Ledger. The favicon, icons, manifest, and `/og.png` are live.
-- **Waitlist:** the Clerk production instance is in `waitlist` mode. New people request access at `/waitlist`. Existing accounts sign in from the modal. Google sign-in is off until the owner adds production Google credentials.
+- **Waitlist:** the Clerk production instance is in `waitlist` mode. New people request access at `/waitlist`. Existing accounts sign in from the modal. Google sign-in is off. The owner chose email sign-in only.
 - **Landing:** server-rendered for crawlers, with two doors, terms, and privacy.
 - **SEO audit score:** 28/28 on `/`, and 27/27 on `/waitlist`, `/terms`, and `/privacy`. Before step 5 it was 13/26 live, and 5/25 on the dev server before any step. All 11 claim quotes are on the live pages (`pnpm check:claims`).
 - **Production:**
@@ -30,14 +30,15 @@ Called it went from an empty folder to a public product at https://called-it.lab
 
 ## Still manual
 
-- **Legal review** of `/terms` and `/privacy`. Both are drafts.
 - **Vercel Web Analytics:** turn it on for the `called-it` project in the dashboard. Vercel has no API for it. The script is in the page and is harmless until then.
 - **Owner's production account:** production is in waitlist mode, so Ralph joins through `/waitlist`, or through an invitation from the Clerk dashboard. The dev test user does not exist in production.
-- **Google sign-in in production** needs Ralph's own Google OAuth client. It is off until then.
 - **Git auto-deploy:** give Vercel's GitHub app access to `r4lphio/called-it`. Until then, deploys run with `vercel deploy --prod`.
 
 ## Skipped, and why
 
+- **Legal review:** the owner accepted the terms and privacy pages as written, on 2026-10-27.
+- **Google sign-in:** the owner chose not to offer it.
+- **A link from r4lph.io:** the owner chose not to add one.
 - **Quant Alchemy cross-links** (`seo-aeo-geo` sibling routers and the QA switchboard): the brief makes Called it an r4lph.io product and says not to add it to any Quant Alchemy site.
 - **The r4lph.io site:** not changed in this run, as the brief asks.
 - **Email sender** (`production-provisioning` step 3): the app sends no email. Clerk sends its own, from the verified `clkmail.called-it` records.
@@ -46,18 +47,18 @@ Called it went from an empty folder to a public product at https://called-it.lab
 
 ## Follow-ups
 
-- Link Called it from r4lph.io, and list it in an r4lph.io `ai.txt` router if that site gets one.
 - Move the Convex project from the Quant Alchemy team to an r4lph.io team if one is created.
 
 ## Next decision for the owner
 
-Open the doors: approve the first waitlist entries in the Clerk dashboard, or invite people directly. Do the legal review before the link goes on r4lph.io.
+Open the doors: approve the first waitlist entries in the Clerk dashboard, or invite people directly.
 
 ## Totals
 
 | Measure | Value |
 | --- | --- |
 | Elapsed time | 4 h 41 min 04 s, from 16:50:04 to the last merge, PR #8, at 21:31:08 |
+| Agent working time | 1 h 21 min 50 s: the elapsed time less 3 h 19 min 14 s of waiting for a merge or an answer. See `docs/run-log.md`. |
 | Pull requests | 8 (#1 to #8) |
 | Picks | 14 decision entries: 8 merges (Ralph), 3 choices by Ralph or the orchestrating agent (hostname, who picks, Clerk DNS records), and 3 picks by the agent (plan, brand, landing) |
 | `seo-aeo-geo` audit score | 28/28 on the live hostname |

@@ -29,6 +29,19 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 ## Totals
 
 - Elapsed time: 4 h 41 min 04 s, from the first start at 16:50:04 to the last merge at 21:31:08.
+- Agent working time: 1 h 21 min 50 s. This is the elapsed time less 3 h 19 min 14 s of waiting for Ralph. Each wait runs from the stop in `docs/decisions.md` to the start of the next work:
+
+  | Wait | From | To | Length |
+  | --- | --- | --- | --- |
+  | App PR merge, hostname, and Clerk login | 17:07:51 | 18:14:12 | 1 h 06 min 21 s |
+  | Plan PR merge | 18:18:36 | 18:44:43 | 26 min 07 s |
+  | Domain PR merge | 18:47:25 | 18:52:50 | 5 min 25 s |
+  | Brand PR merge | 19:06:27 | 19:15:54 | 9 min 27 s |
+  | Waitlist PR merge | 19:17:49 | 19:25:09 | 7 min 20 s |
+  | Landing PR merge | 19:36:39 | 20:08:24 | 31 min 45 s |
+  | SEO PR merge | 20:16:12 | 20:44:02 | 27 min 50 s |
+  | Clerk DNS answer | 20:48:09 | 20:48:31 | 22 s |
+  | Production PR merge | 21:06:31 | 21:31:08 | 24 min 37 s |
 - Pull requests: 8 (#1 to #8).
 - Picks: 14 decision entries. They are 8 merges by Ralph, 3 choices by Ralph or the orchestrating agent (hostname, who picks, Clerk DNS records), and 3 picks by the agent (plan, brand, landing).
 - `seo-aeo-geo` audit score: 28/28 on the live hostname.
