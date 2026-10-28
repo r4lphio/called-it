@@ -2,59 +2,67 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Follow the system theme. The brand step replaces these neutral tokens. */
+/*
+ * Ledger, the Called it brand (brand/BRAND.md): paper, ink, and one red
+ * grading pencil. Red marks "wrong" and the mark's circle only; actions use ink.
+ * Follows the system theme.
+ */
 @custom-variant dark (@media (prefers-color-scheme: dark));
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --hit: oklch(0.6 0.13 155);
-  --miss: oklch(0.6 0.2 27);
+  --radius: 0.75rem;
+  --background: #f6f1e7;
+  --foreground: #1d1b16;
+  --card: #fffdf8;
+  --card-foreground: #1d1b16;
+  --popover: #fffdf8;
+  --popover-foreground: #1d1b16;
+  --primary: #1d1b16;
+  --primary-foreground: #fffdf8;
+  --secondary: #eee7d8;
+  --secondary-foreground: #1d1b16;
+  --muted: #eee7d8;
+  --muted-foreground: #5b564c;
+  --accent: #eee7d8;
+  --accent-foreground: #1d1b16;
+  --destructive: #c8402b;
+  --border: #e3dccd;
+  --input: #d9d1bf;
+  --ring: #8a8477;
+  --pencil: #c8402b;
+  --hit: #2f7a55;
+  --miss: #c8402b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --hit: oklch(0.72 0.14 155);
-    --miss: oklch(0.7 0.18 25);
+    --background: #16140f;
+    --foreground: #efe9dc;
+    --card: #1f1c16;
+    --card-foreground: #efe9dc;
+    --popover: #1f1c16;
+    --popover-foreground: #efe9dc;
+    --primary: #efe9dc;
+    --primary-foreground: #16140f;
+    --secondary: #2a261e;
+    --secondary-foreground: #efe9dc;
+    --muted: #2a261e;
+    --muted-foreground: #a69e8e;
+    --accent: #2a261e;
+    --accent-foreground: #efe9dc;
+    --destructive: #e2664f;
+    --border: #343026;
+    --input: #3d382c;
+    --ring: #8a8477;
+    --pencil: #e2664f;
+    --hit: #6dbb91;
+    --miss: #e2664f;
   }
 }
 
 @theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -77,6 +85,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-pencil: var(--pencil);
   --color-hit: var(--hit);
   --color-miss: var(--miss);
 }

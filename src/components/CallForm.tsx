@@ -80,7 +80,11 @@ export function CallForm() {
               className="flex-wrap"
             >
               {CONFIDENCE_LEVELS.map((level) => (
-                <ToggleGroupItem key={level} value={String(level)} className="tabular-nums">
+                <ToggleGroupItem
+                  key={level}
+                  value={String(level)}
+                  className="tabular-nums aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-primary-foreground"
+                >
                   {level}%
                 </ToggleGroupItem>
               ))}
