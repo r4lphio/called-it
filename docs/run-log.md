@@ -19,5 +19,5 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 | Failure: font download hung | 18:54:53 | | | The font download loop did not exit after writing the files. Fix: checked the three TTF headers and moved on. |
 | Failure: theme-color dropped | 19:05:27 | | | TanStack keeps one meta per name, so the light theme-color vanished. Fix: render both tags in the document head. |
 | waitlist-gate | 19:15:54 | #5 | 19:24:54 | Clerk dev instance set to `waitlist` at 19:16:00. `/waitlist` live. |
-| landing-page | 19:25:09 | pending | pending | Picked B "The number". Landing, terms, and privacy live at 19:30:08. |
+| landing-page | 19:25:09 | #6 | pending | Picked B "The number". Landing, terms, and privacy live at 19:30:08. |
 | Failure: Vercel Web Analytics | about 19:29 | | | No API turns on Web Analytics. Fix: none in this run. The script ships, and turning it on is a follow-up. |
