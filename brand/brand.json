@@ -1,7 +1,7 @@
 {
   "name": "Called it",
   "tagline": "Write down the call. Grade it later.",
-  "description": "Called it is a decision journal for builders. Log a call with a confidence and a due date, grade it when the date comes, and see how often you are right at each confidence level.",
+  "description": "Called it is a decision journal for builders. Log a call with a confidence and a due date, grade it later, and see how often you are right.",
   "ogSubtitle": "A decision journal that shows how often your confidence is right.",
   "url": "called-it.labs.quantalchemy.io",
   "themeColor": "#F6F1E7",

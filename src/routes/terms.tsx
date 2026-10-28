@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "~/lib/seo";
 import { LegalPage } from "~/components/SiteChrome";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({ meta: [{ title: "Terms · Called it" }] }),
+  head: () =>
+    pageHead({
+      title: "Terms",
+      description: "The terms for using Called it, a decision journal for builders made by r4lph.io.",
+      path: "/terms",
+    }),
   component: Terms,
 });
 

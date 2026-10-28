@@ -11,8 +11,9 @@ Current: https://called-it.labs.quantalchemy.io (attached 2026-10-27, CNAME in t
 | Clerk allowed origin | Clerk production instance (step 6) | https://called-it.labs.quantalchemy.io | skill (Platform API) |
 | Site URL | `brand/brand.json` `url`, read by `src/lib/site.ts` | `called-it.labs.quantalchemy.io` | skill (edit, then `pnpm brand:assets`) |
 | OG card text | `public/og.png`, generated from `brand/brand.json` | shows the hostname | skill (`pnpm brand:assets`) |
+| Crawler and assistant files | `public/robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `ai.txt`, `claim-receipts.json` | absolute URLs on `called-it.labs.quantalchemy.io` | skill (edit each, then `pnpm check:claims`) |
 
-Later steps add more hostname-dependent files: `robots.txt`, `sitemap.xml`, `llms.txt`, and the Clerk production domain records. List each here when it lands.
+Canonical links, `og:url`, and `twitter:url` come from `src/lib/seo.ts`, which reads the site URL. Step 6 adds the Clerk production domain records. List each here when it lands.
 
 Deploys run with `vercel deploy --prod` from this repository. Vercel's GitHub app has no access to this private repository, so pushes do not deploy.
 

@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { pageHead } from "~/lib/seo";
 import { LegalPage } from "~/components/SiteChrome";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({ meta: [{ title: "Privacy · Called it" }] }),
+  head: () =>
+    pageHead({
+      title: "Privacy",
+      description: "What Called it collects, which providers handle it, and what never leaves your account.",
+      path: "/privacy",
+    }),
   component: Privacy,
 });
 

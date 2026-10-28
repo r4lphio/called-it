@@ -4,6 +4,7 @@ import type { LevelResult } from "../../convex/model";
 import { CalibrationPlot } from "~/components/CalibrationChart";
 import { PublicPage } from "~/components/SiteChrome";
 import { Button, buttonVariants } from "~/components/ui/button";
+import { FAQ } from "~/lib/faq";
 
 /**
  * The signed-out front door, direction B "The number" (docs/plans/landing).
@@ -81,6 +82,20 @@ export function Landing() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section aria-labelledby="faq" className="py-10">
+        <h2 id="faq" className="font-display text-3xl font-semibold tracking-tight">
+          Questions
+        </h2>
+        <dl className="mt-6 grid gap-x-10 gap-y-6 md:grid-cols-2">
+          {FAQ.map(({ question, answer }) => (
+            <div key={question}>
+              <dt className="font-display text-xl font-semibold">{question}</dt>
+              <dd className="mt-1.5 text-muted-foreground">{answer}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <section className="mt-6 rounded-2xl border bg-card px-6 py-12 text-center">
