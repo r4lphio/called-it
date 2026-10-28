@@ -30,8 +30,6 @@ export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClien
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: SITE_NAME },
       { name: "description", content: SITE_DESCRIPTION },
-      { name: "theme-color", content: THEME_COLOR, media: "(prefers-color-scheme: light)" },
-      { name: "theme-color", content: THEME_COLOR_DARK, media: "(prefers-color-scheme: dark)" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: `${SITE_NAME}: ${SITE_TAGLINE}` },
@@ -80,6 +78,9 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/* Here, not in head(): TanStack keeps one meta per name, and these two differ by media. */}
+        <meta name="theme-color" content={THEME_COLOR} media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content={THEME_COLOR_DARK} media="(prefers-color-scheme: dark)" />
       </head>
       <body>
         {children}
