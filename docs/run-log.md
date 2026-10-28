@@ -18,4 +18,4 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 | brand-creation | 18:52:50 | #4 | 19:15:29 | Picked A "Ledger". Assets live at https://called-it.labs.quantalchemy.io/og.png. |
 | Failure: font download hung | 18:54:53 | | | The font download loop did not exit after writing the files. Fix: checked the three TTF headers and moved on. |
 | Failure: theme-color dropped | 19:05:27 | | | TanStack keeps one meta per name, so the light theme-color vanished. Fix: render both tags in the document head. |
-| waitlist-gate | 19:15:54 | pending | pending | Clerk dev instance set to `waitlist` at 19:16:00. `/waitlist` live. |
+| waitlist-gate | 19:15:54 | #5 | pending | Clerk dev instance set to `waitlist` at 19:16:00. `/waitlist` live. |
