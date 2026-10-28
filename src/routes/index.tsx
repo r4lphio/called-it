@@ -1,59 +1,56 @@
-import { SignInButton, UserButton } from "@clerk/tanstack-react-start";
-import { Link, createFileRoute } from "@tanstack/react-router";
-import { AuthLoading, Authenticated, Unauthenticated, useQuery } from "convex/react";
+import { UserButton, useAuth } from "@clerk/tanstack-react-start";
+import { auth } from "@clerk/tanstack-react-start/server";
+import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
+import { AuthLoading, Authenticated, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { calibration } from "../../convex/model";
 import { CalibrationChart } from "~/components/CalibrationChart";
 import { CallForm } from "~/components/CallForm";
 import { CallLists } from "~/components/CallLists";
+import { Landing } from "~/components/Landing";
 import { Logo } from "~/components/Logo";
-import { Button, buttonVariants } from "~/components/ui/button";
 import { useNow } from "~/lib/dates";
 
-export const Route = createFileRoute("/")({ component: Home });
+/** Whether the request carries a Clerk session, so the server renders the right page. */
+const getSignedIn = createServerFn({ method: "GET" }).handler(async () => {
+  const { userId } = await auth();
+  return userId !== null;
+});
 
+export const Route = createFileRoute("/")({
+  beforeLoad: async () => ({ signedInOnServer: await getSignedIn() }),
+  component: Home,
+});
+
+/**
+ * Strangers get the landing page, rendered on the server for crawlers.
+ * Once Clerk loads in the browser, its live state wins, so signing in from
+ * the modal swaps to the journal without a reload.
+ */
 function Home() {
+  const { signedInOnServer } = Route.useRouteContext();
+  const { isLoaded, isSignedIn } = useAuth();
+  const signedIn = isLoaded ? isSignedIn : signedInOnServer;
+  return signedIn ? <AppShell /> : <Landing />;
+}
+
+function AppShell() {
   return (
     <div className="mx-auto grid max-w-3xl gap-6 px-4 py-6 sm:py-10">
       <header className="flex items-center justify-between">
         <h1>
           <Logo />
         </h1>
-        <Authenticated>
-          <UserButton />
-        </Authenticated>
+        <UserButton />
       </header>
       <AuthLoading>
-        <p className="text-sm text-muted-foreground">Loading...</p>
+        <p className="text-sm text-muted-foreground">Loading your calls...</p>
       </AuthLoading>
-      <Unauthenticated>
-        <SignedOut />
-      </Unauthenticated>
       <Authenticated>
         <Journal />
       </Authenticated>
     </div>
-  );
-}
-
-function SignedOut() {
-  return (
-    <section className="grid gap-4 py-16 text-center">
-      <h2 className="font-display text-4xl font-semibold tracking-tight">Write down the call. Grade it later.</h2>
-      <p className="mx-auto max-w-prose text-muted-foreground">
-        Log a call with a confidence and a due date. Grade it when the date comes. See how well your confidence matches your results.
-      </p>
-      <div className="flex flex-wrap justify-center gap-3">
-        <Link to="/waitlist" className={buttonVariants({ size: "lg" })}>
-          Request access
-        </Link>
-        <SignInButton mode="modal">
-          <Button size="lg" variant="outline">
-            Sign in
-          </Button>
-        </SignInButton>
-      </div>
-    </section>
   );
 }
 

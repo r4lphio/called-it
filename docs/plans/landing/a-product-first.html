@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Called it landing, direction A: Product first</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,600&display=swap">
+<style>
+:root{color-scheme:light;--bg:#F6F1E7;--panel:#FFFDF8;--ink:#1D1B16;--ink2:#5B564C;--ink3:#8A8477;--line:#E3DCCD;--muted:#EEE7D8;--pencil:#C8402B;--hit:#2F7A55}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--ink);font:16px/1.6 'Inter',system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.display{font-family:'Newsreader',Georgia,serif;font-weight:600;letter-spacing:-0.02em}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.logo{display:flex;align-items:center;gap:10px;font-size:24px}.logo svg{width:28px;height:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--panel)}.btn.ghost{background:transparent}
+.btn.sm{height:36px;padding:0 14px;font-size:14px}
+.navr{display:flex;gap:10px;align-items:center}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pencil)}
+.lede{font-size:19px;color:var(--ink2);max-width:58ch}
+.note{font-size:12px;color:var(--ink3)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:72px 0 24px}
+.features .panel{padding:24px}.features h3{font-size:22px;margin:8px 0 6px}.features p{margin:0;color:var(--ink2)}
+.num{font:600 13px/1 'Inter';color:var(--pencil)}
+.cta{margin:56px 0;padding:48px;text-align:center}.cta h2{font-size:40px;margin:0 0 8px}.cta p{color:var(--ink2);margin:0 0 24px}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;display:flex;justify-content:space-between;gap:16px;color:var(--ink2);font-size:14px;flex-wrap:wrap}
+footer .links{display:flex;gap:20px}
+.pill{display:inline-flex;gap:6px;flex-wrap:wrap}.pill span{border:1px solid var(--line);border-radius:9px;padding:4px 10px;font-size:13px;font-variant-numeric:tabular-nums}.pill span.on{background:var(--ink);border-color:var(--ink);color:var(--panel);font-weight:600}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}.ok{color:var(--hit);font-weight:600}.no{color:var(--pencil);font-weight:600}
+.mockbar{position:fixed;left:12px;bottom:12px;background:var(--ink);color:var(--panel);font-size:12px;padding:6px 10px;border-radius:8px;opacity:.85}
+@media (max-width:760px){.features{grid-template-columns:1fr}.hide-sm{display:none}.cta{padding:32px 20px}.cta h2{font-size:30px}}
+</style></head><body>
+<div class="wrap">
+<nav><a class="logo display" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"><rect x="2" y="2" width="60" height="60" rx="14" fill="#FFFDF8" stroke="#1D1B16" stroke-width="3"/><path d="M17 33.5 27 43 47 21" fill="none" stroke="#1D1B16" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M52.5 14.5c-9.5-8-30-7-38.5 3.5C6 28 9 47 22 53.5c12 6 28.5 1.5 33-11" fill="none" stroke="#C8402B" stroke-width="3.5" stroke-linecap="round"/></svg><span>Called it</span></a><div class="navr"><a class="btn sm ghost" href="#">Sign in</a><a class="btn sm primary hide-sm" href="#">Request access</a></div></nav>
+<section style="text-align:center;padding:64px 0 40px">
+  <div class="eyebrow">A decision journal for builders</div>
+  <h1 class="display" style="font-size:clamp(40px,7vw,76px);line-height:1.02;margin:14px auto 18px;max-width:14ch">Write down the call. Grade it later.</h1>
+  <p class="lede" style="margin:0 auto 28px">Log what you expect and how sure you are. When the date comes, grade it. Called it shows how often your confidence is right.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn primary" href="#">Request access</a><a class="btn ghost" href="#">Sign in</a></div>
+</section>
+<div style="height:340px;overflow:hidden;mask-image:linear-gradient(#000 70%,transparent)"><div class="panel" style="padding:20px;display:grid;grid-template-columns:1fr 1.1fr;gap:20px">
+  <div><div class="display" style="font-size:20px">Log a call</div>
+    <div style="border:1px solid #E3DCCD;border-radius:10px;padding:10px 12px;margin:12px 0;color:#5B564C;font-size:14px">The new prompt cuts failed runs by half</div>
+    <div class="pill"><span class="">50%</span><span class="">60%</span><span class="">70%</span><span class="on">80%</span><span class="">90%</span><span class="">99%</span></div>
+    <div style="margin-top:16px"><div class="row"><span>Landing page gets 50 sign-ups in a week</span><span class="no">Wrong</span></div><div class="row"><span>Postgres upgrade causes no downtime</span><span class="ok">Right</span></div><div class="row"><span>Annual plan takes a third of new subs</span><span class="ok">Right</span></div></div>
+  </div>
+  <div><div class="display" style="font-size:20px;margin-bottom:6px">Calibration</div><svg viewBox="0 0 420 260" style="width:100%;font-family:Inter"><line x1="40" x2="406" y1="226.0" y2="226.0" stroke="#E3DCCD"/><text x="32" y="230.0" text-anchor="end" font-size="11" fill="#5B564C">0%</text><line x1="40" x2="406" y1="120.0" y2="120.0" stroke="#E3DCCD"/><text x="32" y="124.0" text-anchor="end" font-size="11" fill="#5B564C">50%</text><line x1="40" x2="406" y1="14.0" y2="14.0" stroke="#E3DCCD"/><text x="32" y="18.0" text-anchor="end" font-size="11" fill="#5B564C">100%</text><text x="73.27272727272728" y="248" text-anchor="middle" font-size="11" fill="#5B564C">50%</text><text x="139.8181818181818" y="248" text-anchor="middle" font-size="11" fill="#5B564C">60%</text><text x="206.36363636363635" y="248" text-anchor="middle" font-size="11" fill="#5B564C">70%</text><text x="272.9090909090909" y="248" text-anchor="middle" font-size="11" fill="#5B564C">80%</text><text x="339.4545454545455" y="248" text-anchor="middle" font-size="11" fill="#5B564C">90%</text><text x="399.3454545454545" y="248" text-anchor="middle" font-size="11" fill="#5B564C">99%</text><line x1="73.27272727272728" y1="120.0" x2="406.0" y2="14.0" stroke="#B9B1A1" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="73.27272727272728" cy="83.96" r="5.5" fill="#1D1B16" stroke="#FFFDF8" stroke-width="2"/><text x="73.27272727272728" y="103.96" text-anchor="middle" font-size="10" fill="#5B564C">n=3</text><circle cx="139.8181818181818" cy="67.0" r="5.5" fill="#1D1B16" stroke="#FFFDF8" stroke-width="2"/><text x="139.8181818181818" y="87.0" text-anchor="middle" font-size="10" fill="#5B564C">n=4</text><circle cx="206.36363636363635" cy="67.0" r="5.5" fill="#1D1B16" stroke="#FFFDF8" stroke-width="2"/><text x="206.36363636363635" y="87.0" text-anchor="middle" font-size="10" fill="#5B564C">n=8</text><circle cx="272.9090909090909" cy="83.96" r="5.5" fill="#1D1B16" stroke="#FFFDF8" stroke-width="2"/><text x="272.9090909090909" y="103.96" text-anchor="middle" font-size="10" fill="#5B564C">n=6</text><circle cx="339.4545454545455" cy="98.80000000000001" r="5.5" fill="#1D1B16" stroke="#FFFDF8" stroke-width="2"/><text x="339.4545454545455" y="118.80000000000001" text-anchor="middle" font-size="10" fill="#5B564C">n=10</text></svg></div>
+</div></div>
+<p class="note" style="text-align:center;margin-top:8px">Sample data.</p>
+<section class="features">
+  <div class="panel"><div class="num">01</div><h3 class="display">Log the call</h3><p>Write what you expect, pick 50 to 99 percent, and set a due date. Thirty days by default.</p></div>
+  <div class="panel"><div class="num">02</div><h3 class="display">Grade it on the day</h3><p>When the date comes, mark it right or wrong and add one line about what happened.</p></div>
+  <div class="panel"><div class="num">03</div><h3 class="display">See your calibration</h3><p>One point per confidence level: how often you were right against how often you expected to be.</p></div>
+</section>
+<section class="panel cta"><h2 class="display">Start keeping score.</h2><p>Called it opens to a few people at a time.</p><a class="btn primary" href="#">Request access</a></section>
+<footer><span>© 2026 Called it, an r4lph.io product</span><span class="links"><a href="#">Terms</a><a href="#">Privacy</a></span></footer>
+</div>
+<div class="mockbar">Mock, direction A: Product first. Numbers are illustrative.</div>
+</body></html>
