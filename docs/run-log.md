@@ -20,7 +20,7 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 | Failure: theme-color dropped | 19:05:27 | | | TanStack keeps one meta per name, so the light theme-color vanished. Fix: render both tags in the document head. |
 | waitlist-gate | 19:15:54 | #5 | 19:24:54 | Clerk dev instance set to `waitlist` at 19:16:00. `/waitlist` live. |
 | landing-page | 19:25:09 | #6 | 20:08:00 | Picked B "The number". Landing, terms, and privacy live at 19:30:08. |
-| Failure: Vercel Web Analytics | about 19:29 | | | No API turns on Web Analytics. Fix: the owner chose not to use analytics, so the script was removed after the run. |
+| Failure: Vercel Web Analytics | about 19:29 | | | No API turns on Web Analytics. Fix: the owner turned it on in the Vercel dashboard after the run. |
 | seo-aeo-geo | 20:08:24 | #7 | 20:43:05 | Live audit 13/26 before, 28/28 after (rechecked 20:15:51 after review fixes). 11/11 claims verified on the live pages. |
 | production-provisioning | 20:44:02 | #8 | 21:31:08 | Clerk production instance at 20:44:12. Convex prod functions at 20:48:02. Clerk DNS records at 20:48:31, verified 20:56:50. Production deploy at 20:57:17. Signed-in round trip at 20:57:39. Privacy wording redeploys at 20:58:28 and 21:06:01. All three deploys came from `feat/production`, whose `convex/` matches `main`. |
 | Failure: Clerk CLI production link | about 20:45 | | | `--instance prod` failed because the CLI's cached link had no production instance, and one `clerk api` call hung on a prompt. Fix: target the instance ID and use the Backend API with the pulled key. |

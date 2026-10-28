@@ -11,7 +11,7 @@ Called it went from an empty folder to a public product at https://called-it.lab
 | 1 | domain-provisioning | https://called-it.labs.quantalchemy.io, TLS by Let's Encrypt | #3 |
 | 2 | brand-creation | "Ledger": mark, palette, type, favicons, OG card. See `brand/BRAND.md` | #4 |
 | 3 | waitlist-gate | Waitlist sign-up on dev, then production. `/waitlist` page | #5 |
-| 4 | landing-page | "The number" landing, terms, and privacy | #6 |
+| 4 | landing-page | "The number" landing, terms, privacy, and Vercel Web Analytics | #6 |
 | 5 | seo-aeo-geo | Per-route heads, JSON-LD, FAQ, robots, sitemap, llms, ai.txt, 11 claim receipts | #7 |
 | 6 | production-provisioning | Clerk production instance, Convex prod, Vercel Production, signed-in round trip proven | #8 |
 
@@ -21,6 +21,7 @@ Called it went from an empty folder to a public product at https://called-it.lab
 - **Brand:** Ledger. The favicon, icons, manifest, and `/og.png` are live.
 - **Waitlist:** the Clerk production instance is in `waitlist` mode. New people request access at `/waitlist`. Existing accounts sign in from the modal. Google sign-in is off. The owner chose email sign-in only.
 - **Landing:** server-rendered for crawlers, with two doors, terms, and privacy.
+- **Analytics:** Vercel Web Analytics counts page views. The owner turned it on in the Vercel dashboard after the run.
 - **SEO audit score:** 28/28 on `/`, and 27/27 on `/waitlist`, `/terms`, and `/privacy`. Before step 5 it was 13/26 live, and 5/25 on the dev server before any step. All 11 claim quotes are on the live pages (`pnpm check:claims`).
 - **Production:**
   - The Clerk production instance `ins_3LIxbCOl2lHdObIX0UIfmrOLPJf` has verified DNS, SSL, and mail records in the deSEC zone.
@@ -35,7 +36,6 @@ Called it went from an empty folder to a public product at https://called-it.lab
 
 ## Skipped, and why
 
-- **Vercel Web Analytics:** the owner chose not to use it, so the script is removed and the privacy page says the site runs no analytics.
 - **Legal review:** the owner accepted the terms and privacy pages as written, on 2026-10-27.
 - **Google sign-in:** the owner chose not to offer it.
 - **A link from r4lph.io:** the owner chose not to add one.

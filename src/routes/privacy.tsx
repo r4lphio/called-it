@@ -25,8 +25,8 @@ function Privacy() {
         </li>
         <li>Your journal: each call, its confidence, due date, grade, and note. Convex stores it.</li>
         <li>
-          Hosting: Vercel hosts the site, including its fonts, so no font request goes to Google. We run no analytics and set no
-          tracking cookies.
+          Visits: page views counted by Vercel Web Analytics. It uses no cookies and does not identify you across sites. Vercel
+          also hosts the site, including its fonts, so no font request goes to Google.
         </li>
       </ul>
       <h2>What never leaves</h2>
