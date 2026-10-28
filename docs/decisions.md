@@ -88,4 +88,13 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Step: seo-aeo-geo
 - Question: Merge PR #7 (https://github.com/r4lphio/called-it/pull/7)?
 - Options: A merge, B ask for changes
-- Pick: pending
+- Pick: A, at 20:43:05
+- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+
+## 20:48:09 Clerk production DNS records
+- Step: production-provisioning
+- Question: May the agent add five Clerk CNAME records under `called-it.labs.quantalchemy.io` in the deSEC labs zone? They are new names, outside the one `called-it` record in scope.
+- Options: A add all five: `clerk.called-it` to `frontend-api.clerk.services`, `accounts.called-it` to `accounts.clerk.services`, `clkmail.called-it` to `mail.349xwubv7y9s.clerk.services`, `clk._domainkey.called-it` to `dkim1.349xwubv7y9s.clerk.services`, and `clk2._domainkey.called-it` to `dkim2.349xwubv7y9s.clerk.services`. B do not add them, and the live site stays on the dev Clerk instance.
+- Pick: A, at 20:48:31
+- By: orchestrating agent, for Ralph
+- Why: "My scope note meant all `called-it` names, and these records serve only this app. They are in the plan Ralph merged in PR #2, and they can be deleted later. Add only these five names and change nothing else in the zone."
