@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Called it: product readiness plan</title>
+<style>
+  :root { color-scheme: dark; --bg:#0f1115; --panel:#171a21; --line:#272b35; --text:#e7e9ee; --muted:#9aa1ae; --accent:#7cc4a4; --warn:#e3b26b; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 74ch; margin: 0 auto; padding: 48px 20px 80px; }
+  header p { color: var(--muted); margin: 4px 0 0; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0; }
+  h2 { font-size: 20px; margin: 40px 0 12px; }
+  h3 { font-size: 16px; margin: 0 0 4px; }
+  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: #1f2330; padding: 1px 5px; border-radius: 4px; }
+  .summary { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 24px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; }
+  ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  ol.steps li { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+  .n { color: var(--accent); font-weight: 600; margin-right: 6px; }
+  .who { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); margin-left: 6px; }
+  .tag.prod { color: var(--warn); border-color: #5a4626; }
+  ul { padding-left: 20px; }
+  li + li { margin-top: 4px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Called it: product readiness plan</h1>
+  <p>2026-10-27 · r4lphio/called-it · request: "make it sellable"</p>
+</header>
+
+<div class="summary">
+  <p><strong>Goal.</strong> Take Called it from a localhost app to a public product at <code>https://called-it.labs.quantalchemy.io</code>, with a brand, a waitlist, a landing page, search and assistant readiness, and production Convex and Clerk.</p>
+  <p><strong>Who does what.</strong> The agent runs all six skills, makes every technical change, and picks the brand and landing directions. The owner merges each pull request. That is the only owner action.</p>
+</div>
+
+<h2 id="intake">Intake answers</h2>
+<table>
+  <tr><th>Question</th><th>Answer</th></tr>
+  <tr><td>Outcome</td><td>"Make it sellable", so all six skills run.</td></tr>
+  <tr><td>Real product or test subject</td><td>A real product under the r4lph.io brand. It joins no Quant Alchemy site, router, or switchboard.</td></tr>
+  <tr><td>Hostname</td><td><code>called-it.labs.quantalchemy.io</code>, the skill default. The owner chose it over <code>called-it.r4lph.io</code> at 17:50:51.</td></tr>
+  <tr><td>r4lph.io</td><td>No change in this run. A link from r4lph.io is a follow-up in the report.</td></tr>
+  <tr><td>Taste picks</td><td>The agent picks the brand and landing directions for this run, as the owner asked.</td></tr>
+</table>
+
+<h2 id="state">What the repository has today</h2>
+<table>
+  <tr><th>Area</th><th>State</th></tr>
+  <tr><td>Hostname</td><td>None. No Vercel project. The labs zone is delegated to deSEC, and its wildcard points at Vercel.</td></tr>
+  <tr><td>Brand</td><td>None. The app uses neutral shadcn tokens and a text title. No favicon or OG image.</td></tr>
+  <tr><td>Waitlist</td><td>Clerk dev instance <code>sign_up_mode</code> is <code>public</code>.</td></tr>
+  <tr><td>Landing</td><td>The signed-out page is one headline and a sign-in button.</td></tr>
+  <tr><td>SEO</td><td>Audit on the dev server: 5 of 25 checks pass.</td></tr>
+  <tr><td>Production</td><td>No Clerk production instance. Convex has only the dev deployment <code>superb-gazelle-474</code>.</td></tr>
+</table>
+
+<h2 id="steps">Steps, in dependency order</h2>
+<p>Each step is one pull request. Each PR carries <code>docs/run-log.md</code> and <code>docs/decisions.md</code>. The next step starts from <code>main</code> after the owner merges.</p>
+<ol class="steps">
+  <li><h3><span class="n">1</span>domain-provisioning</h3>
+    Create the Vercel project <code>called-it</code> in the quant-alchemy team and link it to the repository. Write an explicit <code>called-it</code> CNAME in the deSEC zone. Attach the hostname, check TLS, and write <code>docs/HOSTNAME.md</code>. The first deploy uses the Convex dev deployment and the Clerk dev instance until step 6.
+    <div class="who">Touches: new Vercel project, one deSEC record. No existing project.</div></li>
+  <li><h3><span class="n">2</span>brand-creation</h3>
+    Mock three directions and publish them. The agent picks one and logs why. Generate the favicons, icons, manifest, and OG image from one SVG. Record the brand in <code>brand/BRAND.md</code> in this repository.
+    <div class="who">Picked by the agent for this run.</div></li>
+  <li><h3><span class="n">3</span>waitlist-gate</h3>
+    Set the Clerk dev instance to waitlist mode. Add a <code>/waitlist</code> page with Clerk's form in the brand tokens, and a "Request access" door on the signed-out page.</li>
+  <li><h3><span class="n">4</span>landing-page</h3>
+    Mock three directions and publish them. The agent picks one. Build the landing page with terms, privacy, and Vercel Analytics.
+    <div class="who">Picked by the agent for this run.</div></li>
+  <li><h3><span class="n">5</span>seo-aeo-geo</h3>
+    Add the canonical link, OG and Twitter tags, JSON-LD, per-route heads, robots, sitemap, <code>llms.txt</code>, <code>llms-full.txt</code>, <code>ai.txt</code>, and <code>claim-receipts.json</code>. Run the audit before and after, on the live hostname.</li>
+  <li><h3><span class="n">6</span>production-provisioning<span class="tag prod">production</span></h3>
+    Create the Convex production deployment and a deploy key. Create the Clerk production instance through the Platform API, write its DNS records to the deSEC zone, and copy the waitlist mode and the <code>convex</code> JWT template. Set the Vercel Production env and redeploy. Check a signed-in request end to end.
+    <div class="who">Production for this app only. The owner allowed it and needs no separate stop.</div></li>
+</ol>
+
+<h2 id="changes">Where this run differs from the skill defaults</h2>
+<ul>
+  <li><strong>Brand record in this repository.</strong> <code>brand-creation</code> saves a brand skill in qa-skills. This run touches no other project, so the record is <code>brand/BRAND.md</code>.</li>
+  <li><strong>No ecosystem cross-links.</strong> <code>seo-aeo-geo</code> adds new products to sibling sites and the QA switchboard. Called it is an r4lph.io product, so this run skips that. The r4lph.io link is a follow-up.</li>
+  <li><strong>No email sender.</strong> The app sends no email. Clerk sends its own waitlist emails, so the Resend step is skipped.</li>
+  <li><strong>No <code>clerk deploy</code> wizard.</strong> The wizard needs a terminal. The Platform API creates the production domain instead, so the owner runs nothing.</li>
+</ul>
+
+<h2 id="manual">Still manual after this run</h2>
+<ul>
+  <li>Legal review of the terms and privacy drafts.</li>
+  <li>A link to Called it from r4lph.io.</li>
+</ul>
+</main>
+</body>
+</html>
