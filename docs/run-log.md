@@ -17,3 +17,4 @@ Times are local (MDT), 2026-10-27. One row per step. Rows marked "Failure" recor
 | Failure: Vercel domain add | 18:45:52 | | | CLI 59 needs the project name as a second argument, unlike the skill's note for 50.x. Fix: `vercel domains add <host> called-it`. |
 | brand-creation | 18:52:50 | pending | pending | Picked A "Ledger". Assets live at https://called-it.labs.quantalchemy.io/og.png. |
 | Failure: font download hung | 18:54:53 | | | The font download loop did not exit after writing the files. Fix: checked the three TTF headers and moved on. |
+| Failure: theme-color dropped | 19:05:27 | | | TanStack keeps one meta per name, so the light theme-color vanished. Fix: render both tags in the document head. |
