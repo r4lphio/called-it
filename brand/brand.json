@@ -5,6 +5,7 @@
   "ogSubtitle": "A decision journal that shows how often your confidence is right.",
   "url": "called-it.labs.quantalchemy.io",
   "themeColor": "#F6F1E7",
+  "themeColorDark": "#16140F",
   "background": "#F6F1E7",
   "panel": "#FFFDF8",
   "ink": "#1D1B16",

@@ -47,3 +47,4 @@ Plain, patient, a little dry. Talks like a good editor. Short sentences, no hype
 ## Not done yet
 
 - Clerk's sign-in modal uses the light tokens in both themes.
+- `scripts/brand-assets.ts` splits the OG tagline at the sentence end or comma nearest the middle. It does not check line width. After changing the tagline, look at `public/og.png` before committing.

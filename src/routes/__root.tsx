@@ -3,25 +3,25 @@ import { ClerkProvider, useAuth } from "@clerk/tanstack-react-start";
 import { HeadContent, Outlet, Scripts, createRootRouteWithContext, useRouteContext } from "@tanstack/react-router";
 import type { ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
-import type { ReactNode } from "react";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL, THEME_COLOR } from "~/lib/site";
+import type { ComponentProps, ReactNode } from "react";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL, THEME_COLOR, THEME_COLOR_DARK } from "~/lib/site";
 import appCss from "../styles.css?url";
 
 /** Clerk's sign-in modal and user menu in the Ledger tokens (light theme). */
 const clerkAppearance = {
   variables: {
     colorBackground: "#fffdf8",
-    colorInputBackground: "#fffdf8",
-    colorText: "#1d1b16",
-    colorTextSecondary: "#5b564c",
-    colorInputText: "#1d1b16",
+    colorInput: "#fffdf8",
+    colorForeground: "#1d1b16",
+    colorMutedForeground: "#5b564c",
+    colorInputForeground: "#1d1b16",
     colorPrimary: "#1d1b16",
     colorDanger: "#c8402b",
     colorSuccess: "#2f7a55",
     borderRadius: "0.75rem",
     fontFamily: '"Inter", system-ui, sans-serif',
   },
-};
+} satisfies ComponentProps<typeof ClerkProvider>["appearance"];
 
 export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClient }>()({
   head: () => ({
@@ -30,7 +30,8 @@ export const Route = createRootRouteWithContext<{ convexClient: ConvexReactClien
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: SITE_NAME },
       { name: "description", content: SITE_DESCRIPTION },
-      { name: "theme-color", content: THEME_COLOR },
+      { name: "theme-color", content: THEME_COLOR, media: "(prefers-color-scheme: light)" },
+      { name: "theme-color", content: THEME_COLOR_DARK, media: "(prefers-color-scheme: dark)" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:title", content: `${SITE_NAME}: ${SITE_TAGLINE}` },
