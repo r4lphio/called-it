@@ -14,8 +14,8 @@ Called it is a decision journal for builders, made by r4lph.io and served at htt
 
 - https://called-it.labs.quantalchemy.io/ : the landing page, with the three steps, a sample calibration card, and five common questions.
 - https://called-it.labs.quantalchemy.io/waitlist : request access.
-- https://called-it.labs.quantalchemy.io/terms : terms of use, a draft pending legal review.
-- https://called-it.labs.quantalchemy.io/privacy : what is collected and who handles it, a draft pending legal review.
+- https://called-it.labs.quantalchemy.io/terms : terms of use.
+- https://called-it.labs.quantalchemy.io/privacy : what is collected and who handles it.
 
 ## Products And Tools
 

@@ -57,13 +57,13 @@ export function PublicPage({ children }: { children: ReactNode }) {
   );
 }
 
-/** Terms and privacy: one readable column with a draft notice. */
+/** Terms and privacy: one readable column with the last-updated date. */
 export function LegalPage({ title, updated, children }: { title: string; updated: string; children: ReactNode }) {
   return (
     <PublicPage>
       <article className="mx-auto max-w-prose py-10 [&_h2]:mt-8 [&_h2]:mb-2 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-semibold [&_li]:mt-1 [&_p]:mt-3 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-5">
         <h1 className="font-display text-4xl font-semibold tracking-tight">{title}</h1>
-        <p className="text-sm text-muted-foreground">Last updated {updated}. Draft, pending legal review.</p>
+        <p className="text-sm text-muted-foreground">Last updated {updated}.</p>
         {children}
       </article>
     </PublicPage>

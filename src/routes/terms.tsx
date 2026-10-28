@@ -12,7 +12,7 @@ export const Route = createFileRoute("/terms")({
   component: Terms,
 });
 
-// Draft in plain language from what the product does. Owner's legal review pending.
+// Plain language, from what the product does. The owner accepted it as written on 2026-10-27.
 function Terms() {
   return (
     <LegalPage title="Terms" updated="October 27, 2026">

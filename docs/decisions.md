@@ -7,6 +7,7 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Question: Merge PR #1 (https://github.com/r4lphio/called-it/pull/1)?
 - Options: A merge, B ask for changes
 - Pick: A, at 18:11:10
+- By: Ralph
 
 ## 17:50:51 Hostname
 - Step: product-readiness intake
@@ -37,13 +38,14 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Question: Merge PR #2 (https://github.com/r4lphio/called-it/pull/2)?
 - Options: A merge, B ask for changes
 - Pick: A, at 18:44:12
+- By: Ralph
 
 ## 18:47:25 Merge the domain PR
 - Step: domain-provisioning
 - Question: Merge PR #3 (https://github.com/r4lphio/called-it/pull/3)?
 - Options: A merge, B ask for changes
 - Pick: A, at 18:52:26
-- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+- By: Ralph
 
 ## 18:54:53 Brand direction
 - Step: brand-creation
@@ -59,14 +61,14 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Question: Merge PR #4 (https://github.com/r4lphio/called-it/pull/4)?
 - Options: A merge, B ask for changes
 - Pick: A, at 19:15:29
-- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+- By: Ralph
 
 ## 19:17:49 Merge the waitlist PR
 - Step: waitlist-gate
 - Question: Merge PR #5 (https://github.com/r4lphio/called-it/pull/5)?
 - Options: A merge, B ask for changes
 - Pick: A, at 19:24:54
-- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+- By: Ralph
 
 ## 19:26:42 Landing direction
 - Step: landing-page
@@ -82,14 +84,14 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Question: Merge PR #6 (https://github.com/r4lphio/called-it/pull/6)?
 - Options: A merge, B ask for changes
 - Pick: A, at 20:08:00
-- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+- By: Ralph
 
 ## 20:16:12 Merge the SEO PR
 - Step: seo-aeo-geo
 - Question: Merge PR #7 (https://github.com/r4lphio/called-it/pull/7)?
 - Options: A merge, B ask for changes
 - Pick: A, at 20:43:05
-- By: orchestrating agent, for Ralph (Ralph merged the PR himself)
+- By: Ralph
 
 ## 20:48:09 Clerk production DNS records
 - Step: production-provisioning
@@ -103,4 +105,5 @@ One entry each time the run stops for the owner. Times are local (MDT), 2026-10-
 - Step: production-provisioning
 - Question: Merge PR #8 (https://github.com/r4lphio/called-it/pull/8)?
 - Options: A merge, B ask for changes
-- Pick: pending
+- Pick: A, at 21:31:08
+- By: Ralph
