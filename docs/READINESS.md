@@ -59,5 +59,5 @@ Open the doors: approve the first waitlist entries in the Clerk dashboard, or in
 | --- | --- |
 | Elapsed time | 16:50:04 to the last merge. Through PR #7 (20:43:05): 3 h 53 min 01 s. The figure that includes the PR #8 merge is reported in the thread when it merges. |
 | Pull requests | 8 (#1 to #8) |
-| Picks | 14 decision entries: 8 merges (Ralph), 3 choices by Ralph or the orchestrating agent (hostname, who picks, Clerk DNS records), and 3 picks by the agent (plan, brand, landing) |
+| Picks | 14 decision entries once the PR #8 merge stop is logged: 8 merges (Ralph), 3 choices by Ralph or the orchestrating agent (hostname, who picks, Clerk DNS records), and 3 picks by the agent (plan, brand, landing) |
 | `seo-aeo-geo` audit score | 28/28 on the live hostname |

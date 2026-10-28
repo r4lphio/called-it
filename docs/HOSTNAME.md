@@ -17,6 +17,6 @@ Current: https://called-it.labs.quantalchemy.io (attached 2026-10-27, CNAME in t
 
 Canonical links, `og:url`, and `twitter:url` come from `src/lib/seo.ts`, which reads the site URL. Production Clerk keys live only in Vercel Production. Preview and local development use the Clerk dev instance.
 
-Deploys run with `vercel deploy --prod` from this repository. Production builds run `convex deploy` first (see `vercel.json`). Vercel's GitHub app has no access to this private repository, so pushes do not deploy.
+Deploys run with `vercel deploy --prod` from this repository. Production builds run `convex deploy` first (see `vercel.json`), so deploy production only from an up-to-date `main`. Vercel's GitHub app has no access to this private repository, so pushes do not deploy.
 
 To move: `vercel domains add <new-host> called-it`, then update every row above with the new value.

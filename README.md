@@ -17,7 +17,7 @@ TanStack Start, Convex, Clerk, Tailwind, shadcn/ui on Base UI, Vite, pnpm, TypeS
 
 - Live at https://called-it.labs.quantalchemy.io. `docs/HOSTNAME.md` lists every setting that carries the hostname.
 - Clerk production instance with waitlist sign-up. Convex prod deployment `exciting-coyote-510`.
-- Deploy with `vercel deploy --prod`. On Vercel, a production build runs `convex deploy --cmd 'pnpm build'` (see `vercel.json`), so the Convex functions ship with the app. Locally, `pnpm build` builds the UI only.
+- Deploy with `vercel deploy --prod`, only from an up-to-date `main` with a clean tree. A production build on Vercel runs `convex deploy --cmd 'pnpm build'` (see `vercel.json`), so it pushes the local `convex/` functions to production data. Preview builds and a local `pnpm build` build the UI only.
 - Production never seeds data: `ALLOW_DEV_SEED` is not set there.
 
 ## Sample data
