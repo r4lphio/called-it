@@ -59,7 +59,7 @@
   <tr><td>Waitlist</td><td>Clerk dev instance <code>sign_up_mode</code> is <code>public</code>.</td></tr>
   <tr><td>Landing</td><td>The signed-out page has the site title, a headline, one paragraph, and a sign-in button. No product view, no request-access door, no footer.</td></tr>
   <tr><td>SEO</td><td>Audit on the dev server: 5 of 25 checks pass.</td></tr>
-  <tr><td>Production</td><td>No Clerk production instance. Convex has only the dev deployment <code>superb-gazelle-474</code>.</td></tr>
+  <tr><td>Production</td><td>No Clerk production instance. Convex has only the dev deployment.</td></tr>
 </table>
 
 <h2 id="steps">Steps, in dependency order</h2>
@@ -85,7 +85,7 @@
 
 <h2 id="changes">Where this run differs from the skill defaults</h2>
 <ul>
-  <li><strong>Brand record in this repository.</strong> <code>brand-creation</code> saves a brand skill in qa-skills. This run touches no other project, so the record is <code>brand/BRAND.md</code>.</li>
+  <li><strong>Brand record in this repository.</strong> <code>brand-creation</code> saves a brand skill in the skills repository. This run touches no other project, so the record is <code>brand/BRAND.md</code>.</li>
   <li><strong>No ecosystem cross-links.</strong> <code>seo-aeo-geo</code> adds new products to sibling sites and the QA switchboard. Called it is an r4lph.io product, so this run skips that. The r4lph.io link is a follow-up.</li>
   <li><strong>No email sender.</strong> The app sends no email. Clerk sends its own waitlist emails, so the Resend step is skipped.</li>
   <li><strong>No <code>clerk deploy</code> wizard.</strong> The wizard needs a terminal. The Platform API creates the production domain instead, so the owner runs nothing.</li>
