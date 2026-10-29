@@ -24,7 +24,7 @@ Called it went from an empty folder to a public product at https://called-it.lab
 - **Analytics:** Vercel Web Analytics counts page views. The owner turned it on in the Vercel dashboard after the run.
 - **SEO audit score:** 28/28 on `/`, and 27/27 on `/waitlist`, `/terms`, and `/privacy`. Before step 5 it was 13/26 live, and 5/25 on the dev server before any step. All 11 claim quotes are on the live pages (`pnpm check:claims`).
 - **Production:**
-  - The Clerk production instance `ins_3LIxbCOl2lHdObIX0UIfmrOLPJf` has verified DNS, SSL, and mail records in the deSEC zone.
+  - The Clerk production instance has verified DNS, SSL, and mail records in the deSEC zone.
   - Convex prod is `exciting-coyote-510`. Production builds deploy its functions (`vercel.json`).
   - Vercel Production holds the production Clerk keys, the Convex prod URLs, and a deploy key.
   - At 20:57:39 a temporary check user signed in on the production Clerk instance. Clerk issued a `convex` JWT for it, and Convex prod returned that user's empty journal. The same query without a token was refused. The check user was then deleted. Production holds no users and no calls, so nothing was seeded.
@@ -42,7 +42,7 @@ Called it went from an empty folder to a public product at https://called-it.lab
 - **Quant Alchemy cross-links** (`seo-aeo-geo` sibling routers and the QA switchboard): the brief makes Called it an r4lph.io product and says not to add it to any Quant Alchemy site.
 - **The r4lph.io site:** not changed in this run, as the brief asks.
 - **Email sender** (`production-provisioning` step 3): the app sends no email. Clerk sends its own, from the verified `clkmail.called-it` records.
-- **Brand skill in qa-skills:** the brand record is `brand/BRAND.md` in this repository, because this run touches no other project.
+- **Brand skill in the skills repository:** the brand record is `brand/BRAND.md` in this repository, because this run touches no other project.
 - **The `clerk deploy` wizard:** it needs a terminal. The Platform API call it makes created the production instance instead.
 
 ## Follow-ups
